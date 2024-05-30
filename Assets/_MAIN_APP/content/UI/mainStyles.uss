@@ -1,0 +1,70 @@
+.body {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    height: 30%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    max-height: 10%;
+    max-width: initial;
+    top: 0;
+    flex-basis: 100%;
+    flex-grow: 0;
+}
+
+.nav {
+    position: absolute;
+    background-color: rgb(46, 128, 45);
+    width: 40%;
+    height: 100%;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    transform-origin: center;
+    translate: -100% 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.nav--show {
+    position: absolute;
+    background-color: rgb(46, 128, 45);
+    width: 40%;
+    height: 100%;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    transform-origin: center;
+    translate: 0 0;
+}
+
+.navButton {
+    width: 10%;
+    height: 60%;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("project://database/Assets/ProceduralUIImage/Demo/Icons/menu.png?fileID=2800000&guid=1e89069d5617de74cbf4544c6effa15b&type=3#menu");
+    background-color: rgba(255, 255, 255, 0);
+    margin-left: 5%;
+    color: rgb(55, 55, 55);
+    text-overflow: clip;
+    position: absolute;
+    -unity-background-image-tint-color: rgb(255, 119, 119);
+}
+
+.navButton > OuterGlow {
+    border-radius: 6px;
+    --glow-color: clear;
+    --glow-size: 10;
+}
+
+.navButton:hover > OuterGlow {
+    --glow-color: rgba(255, 255, 255, 0.3);
+}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f204c478b8bbe4eb2ca817e8e96252, type: 3}
+  m_Name: _Biome_TomHoward
+  m_EditorClassIdentifier: 
+  details:
+    <ID>k__BackingField: 734573734
+    <Price>k__BackingField: 17.99
+    <Title>k__BackingField: Fantasy
+    <ItemImage>k__BackingField: {fileID: 21300000, guid: 1550fcf647992e5479a66f1c162ec069, type: 3}
+    <Artist>k__BackingField: Tom Howard
+    <Tags>k__BackingField: 010000000300000007000000
+  audioScenes:
+  - {fileID: 11400000, guid: b59d81ad5877b4646a743e4e647dae26, type: 2}
+  - {fileID: 11400000, guid: e4ab7103f28952943b1e15fe0c904271, type: 2}
+  - {fileID: 11400000, guid: d45c34f1d46aa2c408be50735e079577, type: 2}
+  <SceneQty>k__BackingField: 3
+  <IsFree>k__BackingField: 0
+  <IsActive>k__BackingField: 0

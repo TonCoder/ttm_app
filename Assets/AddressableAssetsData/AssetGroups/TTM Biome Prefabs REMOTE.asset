@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: TTM Biome Prefabs REMOTE
+  m_EditorClassIdentifier: 
+  m_GroupName: TTM Biome Prefabs REMOTE
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9cac6c1f3a3d3f747b318ff5b460f172
+  m_SerializeEntries:
+  - m_GUID: 276a052b9de04d54f8c870db3ea556af
+    m_Address: Assets/_MAIN_APP/Prefabs/SCENES/Scene_TH_Combat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrefabScene
+    - Remote
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a14e3aa95a356949ad8e40779df8272
+    m_Address: Assets/_MAIN_APP/Prefabs/SCENES/Scene_TH_City.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrefabScene
+    - Remote
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9b09d19e496b704fb992b2f165ee654
+    m_Address: Assets/_MAIN_APP/Prefabs/SCENES/Scene_TH_Dungeon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrefabScene
+    - Remote
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 38d5ab88f2d629f43a16853b0f92a0ca, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 5d4785564fc4af54980a974d0258ab78, type: 2}
+    - {fileID: 11400000, guid: 2a5f23c18d6f0d44a8e24247d3f2902e, type: 2}
