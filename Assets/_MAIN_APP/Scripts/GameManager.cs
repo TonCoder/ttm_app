@@ -2,6 +2,7 @@ using System;
 using _MAIN_APP.Scripts.ScriptableObjects;
 using CreativeVeinStudio.Simple_Dialogue_System.Attributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _MAIN_APP.Scripts
 {
@@ -9,14 +10,15 @@ namespace _MAIN_APP.Scripts
     {
         public static GameManager Instance;
 
-        [SerializeField, ExposeSo] internal SoBiomeList ownedBiomes;
-        [SerializeField, ExposeSo] internal SoBiomeList availableBiomes;
+        [FormerlySerializedAs("ownedBiomes")] [SerializeField, ExposeSo] internal SoExpansionsList ownedExpansionses;
+        [FormerlySerializedAs("availableBiomes")] [SerializeField, ExposeSo] internal SoExpansionsList availableExpansionses;
         [SerializeField] private bool registered;
 
+        [FormerlySerializedAs("_activeBiome")]
         [FieldTitle("Activated items")]
         [SerializeField, ExposeSo]
-        internal SoBiomeDetails _activeBiome;
-        [SerializeField, ExposeSo] internal SoAudioSceneDetails _activeScene;
+        internal SoExpansionDetails activeExpansion;
+        [FormerlySerializedAs("_activeScene")] [SerializeField, ExposeSo] internal SoAudioTrackDetails activeTrack;
 
         private void Awake()
         {
@@ -65,10 +67,10 @@ namespace _MAIN_APP.Scripts
         private void GetActiveBiomes()
         {
             // check to see what Biome has been downloaded and add it to the owned list 
-            foreach (var biome in availableBiomes.Biomes)
+            foreach (var biome in availableExpansionses.Expansions)
             {
                 if (biome.IsActive)
-                    ownedBiomes.AddBiome(biome);
+                    ownedExpansionses.AddExpansion(biome);
             }
         }
 

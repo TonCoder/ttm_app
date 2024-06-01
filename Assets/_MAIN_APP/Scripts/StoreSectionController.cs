@@ -6,7 +6,7 @@ using _MAIN_APP.Scripts.Enums;
 using _MAIN_APP.Scripts.ScriptableObjects;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.Events;
 
 namespace _MAIN_APP.Scripts
 {
@@ -17,14 +17,17 @@ namespace _MAIN_APP.Scripts
 
         [SerializeField] private TMP_Dropdown dropdownFilter;
 
-        [FormerlySerializedAs("uiItemPrefab")] [SerializeField]
-        private GameObject uiButtonPrefab;
+        [SerializeField] private UIExpansionPopUpController expansionPopUpController;
 
-        [SerializeField] private List<UiItemController> displayingItem = new List<UiItemController>();
+        [SerializeField] private GameObject uiButtonPrefab;
+
+        [SerializeField] private UnityEvent onExpansionSelected;
+
+        [SerializeField, Space(10)] private List<UiItemController> displayingItem = new List<UiItemController>();
 
         private int _activeFilterIndex = 0;
-
         private GameManager _manager;
+        private SoExpansionDetails _selectedExpansion;
 
         private void Start()
         {
@@ -35,87 +38,109 @@ namespace _MAIN_APP.Scripts
 
         private void Init()
         {
-            // setup filter list
-            dropdownFilter.options.Add(new TMP_Dropdown.OptionData("Show All"));
-            dropdownFilter.options.Add(new TMP_Dropdown.OptionData("Owned"));
-            dropdownFilter.options.Add(new TMP_Dropdown.OptionData("Free"));
-            dropdownFilter.onValueChanged.AddListener(OnFilterChange);
-            dropdownFilter.captionText.text = "Show All";
+            SetupDropDownList();
+            // create the item to the list
+            foreach (var expansion in _manager.availableExpansionses.Expansions)
+            {
+                CreateUiButton(expansion);
+            }
+        }
 
-            foreach (var tag in _manager.availableBiomes.GetBiomeTagList)
+        private void SetupDropDownList()
+        {
+            // setup filter list
+            dropdownFilter.onValueChanged.AddListener(OnFilterChange);
+
+            foreach (var tag in _manager.availableExpansionses.GetTags)
             {
                 // setup dropdown options based on the filter
                 dropdownFilter.options.Add(new TMP_Dropdown.OptionData(tag.ToString()));
             }
 
-            // create the item to the list
-            foreach (var biome in _manager.availableBiomes.Biomes)
-            {
-                CreateUiButton(biome);
-            }
+            dropdownFilter.options.Sort((a, b) => string.Compare(a.text, b.text, StringComparison.Ordinal));
 
+            dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Free"));
+            dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Owned"));
+            dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Show All"));
+            
+            dropdownFilter.captionText.text = "Show All";
             dropdownFilter.value = _activeFilterIndex;
         }
 
-        private void CreateUiButton(in SoBiomeDetails biome)
+        private void CreateUiButton(in SoExpansionDetails expansion)
         {
             var item = Instantiate(uiButtonPrefab, uiListContainer).GetComponent<UiItemController>();
-            item.SetDisplayData(biome.IsFree,
-                biome.IsActive,
-                biome.Details,
-                DownloadSelectedBiome);
+            item.SetDisplayData(expansion.IsFree,
+                expansion.IsActive,
+                expansion.Details,
+                ShowBreakdownPopUp);
             displayingItem.Add(item);
         }
 
-        private void DownloadSelectedBiome(int id)
+        private void ShowBreakdownPopUp(int id)
+        {
+            if (_manager.availableExpansionses.GetExpansionById(id, out _selectedExpansion))
+            {
+                Debug.Log("Purchase Button Selected");
+                expansionPopUpController.SetPupUpInfo(_selectedExpansion);
+                onExpansionSelected?.Invoke();
+            }
+        }
+
+        public void OnPurchaseSelected()
+        {
+            DownloadExpansion(_selectedExpansion.Details.ID);
+        }
+
+        private void DownloadExpansion(int id)
         {
             // perform download on the object with addressable
-            if (_manager.availableBiomes.GetBiomeById(id, out var selectedBiome))
+            if (_manager.availableExpansionses.GetExpansionById(id, out var expansion))
             {
-                var scenesToCheck = selectedBiome.audioScenes?.Select(x => x?.AudioReference).ToArray();
+                var scenesToCheck = expansion.audioScenes?.Select(x => x?.AudioReference).ToArray();
 
                 if (!AddressableManager.WereAssetsDownloaded(scenesToCheck))
                 {
-                    Debug.Log("Need to download Biome scenes");
+                    Debug.Log("Need to download expansion scenes");
                     //TODO SHOW PURCHASE VALIDATION
 
                     // IF accept then send ID to server and get actual price and details for payment
-                    // ONCE paid then Download biome
+                    // ONCE paid then Download expansion
 
                     //TODO GET RESULT AND DOWNLOAD ITEM
 
                     // get selected ui button
-                    var biomeUi = displayingItem.FirstOrDefault(x => x.ID == selectedBiome.Details.ID);
+                    var selectedItemUi = displayingItem.FirstOrDefault(x => x.ID == expansion.Details.ID);
 
                     Debug.Log("Downloading item");
                     AddressableManager.Instance.DownloadAddressableList(
-                        selectedBiome.Details.ID,
+                        expansion.Details.ID,
                         scenesToCheck,
-                        biomeUi!.DownloadProgress,
+                        selectedItemUi!.DownloadProgress,
                         () =>
                         {
                             Debug.Log("Download completed!");
 
                             //done save to active list
-                            BrokerUiActions.TriggerOnDownloadNewBiome(selectedBiome);
+                            BrokerUiActions.TriggerOnDownloadExpansion(expansion);
                         },
                         OnErrorDownloading);
                 }
                 else
                 {
-                    // TODO do a call to api and check if biome is actually owned before proceeding
+                    // TODO do a call to api and check if expansion is actually owned before proceeding
                     // else remove it from their device
 
-                    Debug.Log("Biome scenes are already downlaoded");
-                    displayingItem.FirstOrDefault(x => x.ID == selectedBiome.Details.ID)?.UpdateOwned(true);
-                    BrokerUiActions.TriggerOnDownloadNewBiome(selectedBiome);
+                    Debug.Log("Expansion tracks are already downloaded");
+                    displayingItem.FirstOrDefault(x => x.ID == expansion.Details.ID)?.UpdateOwned(true);
+                    BrokerUiActions.TriggerOnDownloadExpansion(expansion);
                 }
             }
         }
 
         private void OnErrorDownloading(string errorMessage)
         {
-            Debug.LogError($"There was a problem downloading the biome: {errorMessage}");
+            Debug.LogError($"There was a problem downloading the expansion: {errorMessage}");
         }
 
         private void OnFilterChange(int val)
@@ -141,13 +166,12 @@ namespace _MAIN_APP.Scripts
             }
 
             displayingItem.ForEach(x => x.gameObject.SetActive(false));
-            int index = 0;
-            foreach (var b in _manager.availableBiomes.Biomes)
+            var category = Enum.Parse<ECategories>(dropdownFilter.options[val].text);
+
+            for (var i = 0; i < _manager.availableExpansionses.Expansions.Count; i++)
             {
-                var t = Enum.Parse<ECategories>(dropdownFilter.options[val].text);
-                if (b.Details.Tags.Contains(t)) continue;
-                displayingItem[index].gameObject.SetActive(true);
-                index++;
+                if (!_manager.availableExpansionses.Expansions[i].Details.Tags.Contains(category)) continue;
+                displayingItem[i].gameObject.SetActive(true);
             }
         }
     }

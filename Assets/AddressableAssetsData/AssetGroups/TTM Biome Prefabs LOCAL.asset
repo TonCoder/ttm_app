@@ -17,13 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: a14855094af74ec48958ed0fe031adbe
   m_SerializeEntries:
-  - m_GUID: afcb3677683c1c64c862ae568488c4e6
-    m_Address: Assets/_MAIN_APP/content/Objects/Biomes/_Biome_TomHoward.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Build
-    - PrefabScene
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 71136974a4ffe09439dcf1510d178868
     m_Address: Assets/_MAIN_APP/Prefabs/SCENES/Scene_AB_Fantasy.prefab
     m_ReadOnly: 0

@@ -17,7 +17,7 @@ namespace _MAIN_APP.Scripts
         public UnityEvent onResume;
 
 
-        private GameObject _soundBank => GameManager.Instance?._activeScene?._audioController?.Go;
+        private GameObject _soundBank => GameManager.Instance?.activeTrack?._audioController?.Go;
 
 
         public void Play()

@@ -1,6 +1,7 @@
 using System;
 using _MAIN_APP.Scripts.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _MAIN_APP.Scripts.Models
 {
@@ -8,7 +9,7 @@ namespace _MAIN_APP.Scripts.Models
     public class BiomeListDetails
     {
         public string title;
-        public SoAudioSceneDetails audioSceneDetails;
+        [FormerlySerializedAs("audioSceneDetails")] public SoAudioTrackDetails audioTrackDetails;
         public GameObject go;
     }
 }

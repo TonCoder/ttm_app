@@ -4,17 +4,6 @@
     height: 100%;
 }
 
-.header {
-    height: 30%;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    max-height: 10%;
-    max-width: initial;
-    top: 0;
-    flex-basis: 100%;
-    flex-grow: 0;
-}
-
 .nav {
     position: absolute;
     background-color: rgb(46, 128, 45);
@@ -57,14 +46,4 @@
     text-overflow: clip;
     position: absolute;
     -unity-background-image-tint-color: rgb(255, 119, 119);
-}
-
-.navButton > OuterGlow {
-    border-radius: 6px;
-    --glow-color: clear;
-    --glow-size: 10;
-}
-
-.navButton:hover > OuterGlow {
-    --glow-color: rgba(255, 255, 255, 0.3);
 }

@@ -37,14 +37,14 @@ namespace _MAIN_APP.Scripts
         public bool IsOwned => _isOwned;
         public int ID => _itemId;
 
-        public void SetDisplayData(bool isFree, bool isOwned, UIDisplayData data, Action<int> btnAction = null)
+        public void SetDisplayData(bool isFree, bool isActive, UIDisplayData data, Action<int> btnAction = null)
         {
             _isFree = isFree;
-            _isOwned = isOwned;
-            thisBtn.enabled = !isOwned;
-            priceTag.enabled = !isOwned && !isFree;
+            _isOwned = isActive;
+            if (thisBtn) thisBtn.enabled = !isActive;
+            priceTag.enabled = !isActive && !isFree;
             priceTagText.text = $"${data.Price}";
-            SetDisplayData(data, isOwned ? null : btnAction);
+            SetDisplayData(data, isActive ? null : btnAction);
         }
 
         public void SetDisplayData(UIDisplayData data, Action<int> btnAction = null)
