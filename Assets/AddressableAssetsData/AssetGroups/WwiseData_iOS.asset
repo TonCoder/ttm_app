@@ -10,26 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: WwiseData_Windows
+  m_Name: WwiseData_iOS
   m_EditorClassIdentifier: 
-  m_GroupName: WwiseData_Windows
+  m_GroupName: WwiseData_iOS
   m_Data:
     m_SerializedData: []
-  m_GUID: dc055358089d0cf4b90cac9890221c5e
+  m_GUID: e3f171731f7b21644a5047c0dca0277d
   m_SerializeEntries:
-  - m_GUID: 9d2a1fb33bbc8ab4fbe9f489dd8a5a33
-    m_Address: Assets/Wwise_Data/Banks/Windows/Main.bnk
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SoundBanks
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3e90a6e3fd03b2243b32403e14516f6a
-    m_Address: Assets/Wwise_Data/Banks/Windows/UI_SFXs.bnk
+  - m_GUID: b95dded9151f1424b8d7ab6381f0203e
+    m_Address: Assets/Wwise_Data/Banks/iOS/Main.bnk
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ebd738b980474d942a48c52c93969722
-    m_Address: Assets/Wwise_Data/Banks/Windows/DLC_GeneralCombat.bnk
+  - m_GUID: 840912d0b18ebf042b1616465204eba8
+    m_Address: Assets/Wwise_Data/Banks/iOS/UI_SFXs.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1d00ee4253419043adee4e8d9f29014
+    m_Address: Assets/Wwise_Data/Banks/iOS/DLC_GeneralCombat.bnk
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -37,5 +36,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 38d5ab88f2d629f43a16853b0f92a0ca, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: edb8eafe4e5fd5d44a1e9137f556b6de, type: 2}
-    - {fileID: 11400000, guid: 81aa725d4d1b4fd429e3c2d697de8309, type: 2}
+    - {fileID: 11400000, guid: 40b8997ae2c02a1488ae363aafb0018c, type: 2}
+    - {fileID: 11400000, guid: e9910d917585b6b449cfb1f3cf223917, type: 2}

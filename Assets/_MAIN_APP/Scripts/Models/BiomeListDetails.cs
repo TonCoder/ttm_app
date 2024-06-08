@@ -9,7 +9,7 @@ namespace _MAIN_APP.Scripts.Models
     public class BiomeListDetails
     {
         public string title;
-        [FormerlySerializedAs("audioSceneDetails")] public SoAudioTrackDetails audioTrackDetails;
+        public SoAudioTrackDetails audioTrackDetails;
         public GameObject go;
     }
 }

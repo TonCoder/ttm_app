@@ -257,6 +257,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
+        m_TargetAssemblyTypeName: _MAIN_APP.Scripts.Brokers.SoBrokerUiActions, Assembly-CSharp
+        m_MethodName: TriggerOnPlayClickEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1883865225093294188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +529,18 @@ MonoBehaviour:
       - m_Target: {fileID: 5870481342170978911}
         m_TargetAssemblyTypeName: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
         m_MethodName: DORestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
+        m_TargetAssemblyTypeName: _MAIN_APP.Scripts.Brokers.SoBrokerUiActions, Assembly-CSharp
+        m_MethodName: TriggerOnPlayClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1232,6 +1256,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
+        m_TargetAssemblyTypeName: _MAIN_APP.Scripts.Brokers.SoBrokerUiActions, Assembly-CSharp
+        m_MethodName: TriggerOnPlayClickEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &672568973793558380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,6 +1552,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8188650914635580922}
         m_TargetAssemblyTypeName: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
         m_MethodName: DORestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
+        m_TargetAssemblyTypeName: _MAIN_APP.Scripts.Brokers.SoBrokerUiActions, Assembly-CSharp
+        m_MethodName: TriggerOnPlayClickEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

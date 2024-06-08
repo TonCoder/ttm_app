@@ -8,26 +8,28 @@ using UnityEngine;
 
 namespace _MAIN_APP.Scripts.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "_ExpansionDetails", menuName = "TTM/ExpansionDetails")]
+    [CreateAssetMenu(fileName = "Expansion_", menuName = "TTM/ExpansionDetails")]
     public class SoExpansionDetails : ScriptableObject
     {
         [SerializeField] private UIDisplayData details = new UIDisplayData();
+        [SerializeField] private AK.Wwise.Bank expansionBank = new AK.Wwise.Bank();
 
-        [SerializeField] [ItemCanBeNull] internal List<SoAudioTrackDetails> audioScenes =
+        [SerializeField] [ItemCanBeNull] internal List<SoAudioTrackDetails> audioTracks =
             new List<SoAudioTrackDetails>();
 
+        public AK.Wwise.Bank ExpansionBank => expansionBank;
         [field: SerializeField] public bool IsFree { get; private set; }
         [field: SerializeField] public bool IsActive { get; internal set; }
 
         public UIDisplayData Details => details;
 
-        public IEnumerable<ECategories> GetSceneTagList =>
-            audioScenes.SelectMany(x => x?.details.Tags).Distinct();
+        public IEnumerable<ECategories> GetTrackTags =>
+            audioTracks.SelectMany(x => x?.details.Tags).Distinct();
 
-        public bool GetAudioSceneById(int id, out SoAudioTrackDetails audioTrack)
+        public bool GetTrackSceneById(int id, out SoAudioTrackDetails audioTrack)
         {
             audioTrack = null;
-            var exist = audioScenes.FirstOrDefault(x => x.details.ID == id);
+            var exist = audioTracks.FirstOrDefault(x => x.details.ID == id);
             if (!exist) return false;
             audioTrack = exist;
             return true;
@@ -35,7 +37,7 @@ namespace _MAIN_APP.Scripts.ScriptableObjects
 
         private void OnValidate()
         {
-            details.Qty = audioScenes.Count;
+            details.Qty = audioTracks.Count;
         }
     }
 }

@@ -18,6 +18,7 @@ namespace _MAIN_APP.Scripts
         [SerializeField] private TextMeshProUGUI _qty;
         [SerializeField] private Button thisBtn;
         [SerializeField] private Canvas freeTag;
+        [SerializeField] private Image ownedOverlay;
         [SerializeField] private Canvas ownedTag;
         [SerializeField] private Canvas priceTag;
         [SerializeField] private TextMeshProUGUI priceTagText;
@@ -30,17 +31,17 @@ namespace _MAIN_APP.Scripts
 
         private UIDisplayData _displayData;
         private bool _isFree;
-        private bool _isOwned;
+        private bool _isActive;
         private int _itemId;
 
         public bool IsFree => _isFree;
-        public bool IsOwned => _isOwned;
+        public bool IsActive => _isActive;
         public int ID => _itemId;
 
         public void SetDisplayData(bool isFree, bool isActive, UIDisplayData data, Action<int> btnAction = null)
         {
             _isFree = isFree;
-            _isOwned = isActive;
+            _isActive = isActive;
             if (thisBtn) thisBtn.enabled = !isActive;
             priceTag.enabled = !isActive && !isFree;
             priceTagText.text = $"${data.Price}";
@@ -72,6 +73,7 @@ namespace _MAIN_APP.Scripts
                 }
 
                 ownedTag.enabled = true;
+                if (ownedOverlay) ownedOverlay.enabled = true;
                 _progressImage.enabled = false;
                 _progressText.enabled = false;
                 return;
@@ -95,7 +97,12 @@ namespace _MAIN_APP.Scripts
         internal void UpdateOwned(bool owned)
         {
             if (ownedTag)
+            {
+                if (thisBtn) thisBtn.enabled = !owned;
+                if (ownedOverlay) ownedOverlay.enabled = true;
                 ownedTag.enabled = owned;
+                _isActive = owned;
+            }
         }
 
         private void UpdateContent()
@@ -106,8 +113,9 @@ namespace _MAIN_APP.Scripts
             if (_qty) _qty.text = $"Scene qty: {_displayData.Qty}";
             if (_isFree && freeTag)
                 freeTag.enabled = true;
-            if (IsOwned && ownedTag)
+            if (IsActive && ownedTag)
                 ownedTag.enabled = true;
+            if (ownedOverlay) ownedOverlay.enabled = IsActive;
         }
     }
 }

@@ -1,5 +1,5 @@
 using System;
-using _MAIN_APP.Scripts.Brokers;
+using _MAIN_APP.Scripts.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,9 +16,7 @@ namespace _MAIN_APP.Scripts
         public UnityEvent onPause;
         public UnityEvent onResume;
 
-
-        private GameObject _soundBank => GameManager.Instance?.activeTrack?._audioController?.Go;
-
+        private ITrackActions _soundBank => GameManager.Instance?.ActiveTrack;
 
         public void Play()
         {
@@ -27,19 +25,19 @@ namespace _MAIN_APP.Scripts
 
         public void PauseAudio()
         {
-            aPauseEvent.Post(_soundBank);
+            aPauseEvent.Post(_soundBank.Go);
             onPause?.Invoke();
         }
 
         public void StopAudio()
         {
-            aStopEvent.Post(_soundBank);
+            aStopEvent.Post(_soundBank.Go);
             onStop?.Invoke();
         }
 
         public void ResumeAudio()
         {
-            aResumeEvent.Post(_soundBank);
+            aResumeEvent.Post(_soundBank.Go);
             onResume?.Invoke();
         }
     }

@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using _MAIN_APP.Scripts.Brokers;
 using _MAIN_APP.Scripts.Enums;
+using _MAIN_APP.Scripts.Interfaces;
+using _MAIN_APP.Scripts.ScriptableObjects;
 using CreativeVeinStudio.Simple_Dialogue_System.Attributes;
 using TMPro;
 using UnityEngine;
@@ -16,7 +19,7 @@ namespace _MAIN_APP.Scripts
         private UiItemController trackHeaderUI;
 
         [FieldTitle("Sections Setup")] [SerializeField]
-        private BrokerSoundBank soundbankBroker;
+        private SoBrokerUiActions uiBroker;
 
         [SerializeField, Tooltip("The container in which the list of scenes will show up in")]
         private Transform uiListContainer;
@@ -29,22 +32,21 @@ namespace _MAIN_APP.Scripts
         [SerializeField] private List<DisplayListData> displayingItem = new List<DisplayListData>();
 
         [FieldTitle("Sections Setup")] [SerializeField]
-        private UnityEvent onSceneSelected;
+        private UnityEvent onTrackSelected;
 
-
-        private int _activeFilterIndex = 0;
+        private int _activeFilterIndex;
         private GameManager _manager;
+        private List<SoExpansionDetails> expansionToUnload = new List<SoExpansionDetails>(20);
 
-        [Serializable]
         struct DisplayListData
         {
-            public GameObject Go;
             public UiItemController uiItemController;
+            public GameObject go;
         }
 
         private void Awake()
         {
-            BrokerUiActions.OnSelectedExpansion += OnBiomeSelected;
+            uiBroker.OnSelectedExpansion += OnSelectedExpansion;
         }
 
         private void Start()
@@ -54,19 +56,19 @@ namespace _MAIN_APP.Scripts
 
         private void OnDisable()
         {
-            BrokerUiActions.OnSelectedExpansion -= OnBiomeSelected;
+            uiBroker.OnSelectedExpansion -= OnSelectedExpansion;
             displayingItem.Clear();
         }
 
-        private void SetupDropdownList()
+        private void SetupFilterdown(IEnumerable<ECategories> categories)
         {
             // setup filter list
             dropdownFilter.onValueChanged.AddListener(OnFilterChange);
 
-            foreach (var tag in _manager.activeExpansion?.GetSceneTagList!)
+            foreach (var category in categories)
             {
                 // setup dropdown options based on the filter
-                dropdownFilter.options.Add(new TMP_Dropdown.OptionData(tag.ToString()));
+                dropdownFilter.options.Add(new TMP_Dropdown.OptionData(category.ToString()));
             }
 
             dropdownFilter.options.Sort((a, b) => string.Compare(a.text, b.text, StringComparison.Ordinal));
@@ -76,33 +78,49 @@ namespace _MAIN_APP.Scripts
             dropdownFilter.value = _activeFilterIndex;
         }
 
-        private void OnBiomeSelected(int biomeSelected)
+        public void RemoveUnusedBanks()
+        {
+            expansionToUnload =
+                _manager.MountedExpansion.Where(x => x != _manager.ActiveExpansion).ToList();
+            expansionToUnload?.ForEach(x =>
+                {
+                    if (x != _manager.ActiveExpansion)
+                    {
+                        x.ExpansionBank.Unload();
+                        _manager.MountedExpansion.Remove(x);
+                    }
+                }
+            );
+        }
+
+        private void OnSelectedExpansion(int biomeSelected)
         {
             Debug.Log($"Biome selected {biomeSelected}");
             // TODO - show loading 
 
-            if (_manager.activeExpansion && _manager.activeExpansion.Details.ID == biomeSelected) return;
+            if (_manager.ActiveExpansion && _manager.ActiveExpansion.Details.ID == biomeSelected) return;
 
-            if (_manager.ownedExpansionses.GetExpansionById(biomeSelected, out _manager.activeExpansion))
+            if (_manager.ownedExpansionses.GetExpansionById(biomeSelected, out var expansion))
             {
-                // remove any previous reference, from previously active biome
-                _manager.activeExpansion?.audioScenes?.ForEach(x => x.DestroyReference());
+                // add expansion and load the SoundBank
+                _manager.MountedExpansion.Add(expansion);
+                _manager.MountedExpansion.Last().ExpansionBank.Load();
 
-                // hide buttons if created for reuse
-                displayingItem.ForEach(x => x.Go.SetActive(false));
+                // hide buttons if any for reuse
+                displayingItem.ForEach(x => x.go.SetActive(false));
 
                 // create Tag list for dropdown filter
-                SetupDropdownList();
+                SetupFilterdown(_manager.MountedExpansion.Last().GetTrackTags);
 
-                for (int i = 0; i < _manager.activeExpansion?.Details.Qty; i++)
+                for (int i = 0; i < _manager.MountedExpansion.Last()?.audioTracks.Count; i++)
                 {
-                    CreateUiButton(i);
+                    CreateUiButton(_manager.MountedExpansion.Last(), i);
                 }
 
+                // set Scene Expansion header info
+                trackHeaderUI.SetDisplayData(_manager.MountedExpansion.Last().Details);
 
-                // set Scene Biome header info
-                trackHeaderUI.SetDisplayData(_manager.activeExpansion.Details, null);
-
+                _manager.ActiveExpansion = _manager.MountedExpansion.Last();
                 // TODO - hide loading 
 
                 return;
@@ -111,49 +129,58 @@ namespace _MAIN_APP.Scripts
             Debug.Log("The selected biome does not exist");
         }
 
-        private void CreateUiButton(int index)
+        private void OnTrackSelected(int selectedId)
         {
-            if (_manager.activeExpansion.audioScenes == null || _manager.activeExpansion.audioScenes?.Count <= 0)
+            if (_manager.ActiveExpansion &&
+                _manager.ActiveExpansion.GetTrackSceneById(selectedId, out SoAudioTrackDetails track))
             {
-                Debug.Log("The Biome was not loaded or something went wrong.");
+                if (_manager.ActiveTrack != null && _manager.ActiveTrack.TrackID != track.details.ID)
+                {
+                    _manager.ActiveTrack.Stop(() =>
+                        AddressableManager.Instance.UnLoadAndDestroy(_manager.ActiveTrack.InstanceID));
+                }
+
+                // get the audio track and create a ref
+                _manager.ActiveTrack = AddressableManager.Instance.GetInstanceOrCreate(track.AudioReference)
+                    .GetComponent<ITrackActions>();
+
+                // play new track
+                _manager.ActiveTrack.TrackID = track.details.ID;
+                _manager.ActiveTrack.Load();
+                _manager.ActiveTrack.Play();
+                onTrackSelected?.Invoke();
+            }
+        }
+
+        private void CreateUiButton(SoExpansionDetails selectedExpansion, int index)
+        {
+            if (selectedExpansion.audioTracks == null ||
+                selectedExpansion.audioTracks?.Count <= 0)
+            {
+                Debug.Log("The Expansion was not loaded or something went wrong.");
                 return;
             }
-
 
             if (displayingItem != null && displayingItem.Count > index)
             {
                 displayingItem[index].uiItemController
-                    .SetDisplayData(_manager.activeExpansion.audioScenes?[index]?.details, OnSceneSelected);
-                displayingItem[index].Go.SetActive(true);
+                    .SetDisplayData(selectedExpansion.audioTracks?[index]?.details, OnTrackSelected);
+                displayingItem[index].go.SetActive(true);
             }
             else
             {
                 // instantiate object to display
-                var item = Instantiate(uiButtonPrefab, uiListContainer).GetComponent<UiItemController>();
-                item.SetDisplayData(_manager.activeExpansion.audioScenes?[index]?.details, OnSceneSelected);
+                var trackUI = Instantiate(uiButtonPrefab, uiListContainer).GetComponent<UiItemController>();
+                trackUI.SetDisplayData(selectedExpansion.audioTracks?[index]?.details, OnTrackSelected);
 
                 displayingItem.Add(new DisplayListData()
                 {
-                    Go = item.gameObject,
-                    uiItemController = item.GetComponent<UiItemController>()
+                    go = trackUI.gameObject,
+                    uiItemController = trackUI.GetComponent<UiItemController>()
                 });
             }
         }
 
-        private void OnSceneSelected(int selectedId)
-        {
-            //if same scene selected then do nothing
-            if (_manager.activeExpansion.audioScenes != null &&
-                (_manager.activeTrack?.details?.ID ?? 0) == selectedId) return;
-
-            _manager.activeTrack?.UnloadReference();
-            if (_manager.activeExpansion.GetAudioSceneById(selectedId, out _manager.activeTrack))
-            {
-                _manager.activeTrack?.CreateOrLoadReference();
-            }
-
-            onSceneSelected?.Invoke();
-        }
 
         private void OnFilterChange(int val)
         {
@@ -161,16 +188,16 @@ namespace _MAIN_APP.Scripts
             _activeFilterIndex = val;
             if (val == 0) // show all
             {
-                displayingItem.ForEach(x => x.Go.SetActive(true));
+                displayingItem.ForEach(x => x.go.SetActive(true));
                 return;
             }
 
-            displayingItem.ForEach(x => x.Go.SetActive(false));
+            displayingItem.ForEach(x => x.go.SetActive(false));
             var category = Enum.Parse<ECategories>(dropdownFilter.options[val].text);
-            for (var i = 0; i < _manager.activeExpansion.audioScenes.Count; i++)
+            for (var i = 0; i < _manager.ActiveExpansion.audioTracks.Count; i++)
             {
-                if (!_manager.activeExpansion.audioScenes[i]!.details.Tags.Contains(category)) continue;
-                displayingItem[i].Go.SetActive(true);
+                if (!_manager.ActiveExpansion.audioTracks[i]!.details.Tags.Contains(category)) continue;
+                displayingItem[i].go.SetActive(true);
             }
         }
     }

@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -2107,6 +2107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e46b7becc14fdbb97c4dac07ff53ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiBroker: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
   uiListContainer: {fileID: 6190451777957447071}
   dropdownFilter: {fileID: 9033969215267347219}
   expansionPopUpController: {fileID: 0}
@@ -2876,9 +2877,45 @@ PrefabInstance:
       value: Button - Close
       objectReference: {fileID: 0}
     - target: {fileID: 2736110433674269770, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736110433674269770, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736110433674269770, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 8717167120728492064}
+    - target: {fileID: 2736110433674269770, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
+    - target: {fileID: 2736110433674269770, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736110433674269770, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DORestart
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736110433674269770, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: TriggerOnPlayCancelEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736110433674269770, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736110433674269770, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: _MAIN_APP.Scripts.Brokers.SoBrokerUiActions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736110433674269770, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

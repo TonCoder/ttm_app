@@ -31,6 +31,27 @@ MonoBehaviour:
     - PrefabScene
     - Build
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 276a052b9de04d54f8c870db3ea556af
+    m_Address: Assets/_MAIN_APP/Prefabs/SCENES/Scene_TH_Combat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrefabScene
+    - Remote
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a14e3aa95a356949ad8e40779df8272
+    m_Address: Assets/_MAIN_APP/Prefabs/SCENES/Scene_TH_City.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrefabScene
+    - Remote
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9b09d19e496b704fb992b2f165ee654
+    m_Address: Assets/_MAIN_APP/Prefabs/SCENES/Scene_TH_Dungeon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PrefabScene
+    - Remote
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 38d5ab88f2d629f43a16853b0f92a0ca, type: 2}
   m_SchemaSet:

@@ -1287,37 +1287,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19eec6ef701ba0a43bc91e5b2336a46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiBroker: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
   uiListContainer: {fileID: 2930131121003305802}
   noExpansionNotice: {fileID: 2854918123322300933}
   dropdownFilter: {fileID: 4455732409186879412}
   uiItemPrefab: {fileID: 3805049878909574336, guid: 72044730067f644489ac7e42a490ff92, type: 3}
-  OnBiomeSelected:
+  onBiomeSelected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
-        m_MethodName: DORestart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1326172440951508748}
-        m_TargetAssemblyTypeName: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
-        m_MethodName: DORestart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   displayingItem: []
 --- !u!1 &5812935141342907291
 GameObject:
@@ -2630,17 +2607,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
---- !u!114 &1326172440951508748 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
-  m_PrefabInstance: {fileID: 1497314849429454479}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d0390bd8b8ffd640b34fe25065ff1df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &8851582203337871781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7931020302672686890, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}

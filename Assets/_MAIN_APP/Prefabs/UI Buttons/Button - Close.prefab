@@ -134,9 +134,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
-        m_MethodName: DORestart
+      - m_Target: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
+        m_TargetAssemblyTypeName: _MAIN_APP.Scripts.Brokers.SoBrokerUiActions, Assembly-CSharp
+        m_MethodName: TriggerOnPlayCancelEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

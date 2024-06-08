@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using _MAIN_APP.Scripts.Brokers;
 using _MAIN_APP.Scripts.Enums;
 using _MAIN_APP.Scripts.ScriptableObjects;
+using CreativeVeinStudio.Simple_Dialogue_System.Attributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,36 +12,36 @@ namespace _MAIN_APP.Scripts
 {
     public class ExpansionSectionController : MonoBehaviour
     {
-        [Header("Sections Setup")] [SerializeField]
-        private Transform uiListContainer;
+        [FieldTitle("Sections Setupup")] [SerializeField]
+        private SoBrokerUiActions uiBroker;
+
+        [SerializeField] private Transform uiListContainer;
 
         [SerializeField] private Transform noExpansionNotice;
 
         [SerializeField] private TMP_Dropdown dropdownFilter;
         [SerializeField] private GameObject uiItemPrefab;
-        [SerializeField, Space(10)] private UnityEvent OnBiomeSelected;
+        [SerializeField, Space(10)] private UnityEvent onBiomeSelected;
         [SerializeField, Space(10)] private List<UiItemController> displayingItem = new List<UiItemController>();
 
-        private int _activeFilterIndex = 0;
+        private int _activeFilterIndex;
         private GameManager _manager;
 
         private void Start()
         {
             _manager = GameManager.Instance;
-            BrokerUiActions.OnDownloadExpansion += DownloadedNewBiome;
+            uiBroker.OnDownloadExpansion += DownloadedNewBiome;
             Init();
         }
 
         private void OnDisable()
         {
-            BrokerUiActions.OnDownloadExpansion -= DownloadedNewBiome;
+            uiBroker.OnDownloadExpansion -= DownloadedNewBiome;
         }
 
         private void DownloadedNewBiome(SoExpansionDetails soExpansionDetails)
         {
-            soExpansionDetails.IsActive = true;
             dropdownFilter.options.Clear();
-            _manager.ownedExpansionses.AddExpansion(soExpansionDetails);
             Init();
         }
 
@@ -63,10 +63,10 @@ namespace _MAIN_APP.Scripts
             // setup filter list
             dropdownFilter.onValueChanged.AddListener(OnFilterChange);
 
-            foreach (var tag in _manager.ownedExpansionses.GetTags)
+            foreach (var categories in _manager.ownedExpansionses.GetTags)
             {
                 // setup dropdown options based on the filter
-                dropdownFilter.options.Add(new TMP_Dropdown.OptionData(tag.ToString()));
+                dropdownFilter.options.Add(new TMP_Dropdown.OptionData(categories.ToString()));
             }
 
             dropdownFilter.options.Sort((a, b) => string.Compare(a.text, b.text, StringComparison.Ordinal));
@@ -85,14 +85,14 @@ namespace _MAIN_APP.Scripts
 
         private void OnBiomeClicked(int id)
         {
-            BrokerUiActions.TriggerOnSelectedABiome(id);
-            OnBiomeSelected?.Invoke();
+            uiBroker.TriggerOnSelectedABiome(id);
+            onBiomeSelected?.Invoke();
         }
 
         private void SetExistingUIObject(int index)
         {
             displayingItem[index].SetDisplayData(_manager.ownedExpansionses.Expansions[index].Details,
-                BrokerUiActions.TriggerOnSelectedABiome);
+                uiBroker.TriggerOnSelectedABiome);
             displayingItem[index].gameObject.SetActive(true);
         }
 

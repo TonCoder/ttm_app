@@ -9,7 +9,6 @@ using UnityEditor;
 #endif
 
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _MAIN_APP.Scripts.ScriptableObjects
 {

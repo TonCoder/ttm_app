@@ -9,14 +9,15 @@ using UnityEngine.Assertions;
 namespace _MAIN_APP.Scripts.Abstracts
 {
     [Serializable, RequireComponent(typeof(AkBank), typeof(AkEvent), typeof(AkGameObj))]
-    public class AudioSceneController : MonoBehaviour, IAudioSceneActions
+    public class TrackController : MonoBehaviour, ITrackActions
     {
-        // [SerializeField] internal SoAudioSceneDetails audioScene;
         [SerializeField] internal SoundBankSetup setup;
 
         private uint[] _playingIds = new uint[50];
         private EAudioBankStatus _bankStatus;
         public GameObject Go => this.gameObject;
+        public int TrackID { get; set; }
+        public int InstanceID => this.gameObject.GetInstanceID();
 
         private void Awake()
         {
@@ -32,40 +33,20 @@ namespace _MAIN_APP.Scripts.Abstracts
             // setup.Button.onClick.AddListener(SetBiome);
         }
 
-        public void LoadAndPlay()
+        public void Load(Action doneLoading = null)
         {
-            if (_bankStatus == EAudioBankStatus.NotLoaded)
-            {
-                setup.Bank.data.Load(setup.DecodeBank, setup.SaveDecodedBank);
-                _bankStatus = EAudioBankStatus.Loaded;
-
-                Play();
-            }
-            else
-            {
-                Play();
-            }
+            if (_bankStatus != EAudioBankStatus.NotLoaded) return;
+            // setup.Bank.data.Load(setup.DecodeBank, setup.SaveDecodedBank);
+            _bankStatus = EAudioBankStatus.Loaded;
+            doneLoading?.Invoke();
         }
 
-        public void LoadAsync()
-        {
-            _bankStatus = EAudioBankStatus.Loading;
-            setup.Bank.data.LoadAsync(LoadComplete);
-        }
-
-        public void Unload()
+        public void UnloadBank(Action doneUnLoading = null)
         {
             setup.Bank.UnloadBank(this.gameObject);
             _bankStatus = EAudioBankStatus.NotLoaded;
             // AK.Wwise.Unity.WwiseAddressables.AkAddressableBankManager.Instance.
-        }
-
-        private void LoadComplete(uint in_bankid, IntPtr in_inmemorybankptr, AKRESULT in_eloadresult, object in_cookie)
-        {
-            if (in_eloadresult == AKRESULT.AK_Success)
-            {
-                _bankStatus = EAudioBankStatus.Loaded;
-            }
+            doneUnLoading?.Invoke();
         }
 
         public bool IsStillPlaying()
@@ -86,6 +67,12 @@ namespace _MAIN_APP.Scripts.Abstracts
             return false;
         }
 
+        public void PlayTrack()
+        {
+            setup.PlayEvent.data.Stop(this.gameObject);
+            setup.PlayEvent.data.Post(this.gameObject, (uint)AkCallbackType.AK_EndOfEvent,
+                MusicDonePlaying);
+        }
 
         public void Play()
         {
@@ -100,15 +87,20 @@ namespace _MAIN_APP.Scripts.Abstracts
                         MusicDonePlaying);
                     break;
                 case EAudioBankStatus.Loading:
-                    Debug.Log("Sound Bank is still loading");
+                    Debug.Log("Sound Track is still loading");
                     break;
                 case EAudioBankStatus.Playing:
-                    Debug.Log("Already playing Sound Bank");
+                    Debug.Log("Already playing Sound Track");
                     break;
                 default:
-                    Debug.Log("Not a valid Sound Bank status");
+                    Debug.Log("Not a valid Sound Track status");
                     break;
             }
+        }
+
+        public void Stop(Action stopped)
+        {
+            setup.PlayEvent.data.Stop(this.gameObject);
         }
 
         private void MusicDonePlaying(object inCookie, AkCallbackType inType, AkCallbackInfo inInfo)

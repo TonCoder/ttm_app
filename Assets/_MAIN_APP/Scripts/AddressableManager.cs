@@ -36,7 +36,7 @@ namespace _MAIN_APP.Scripts
 
         private void OnDestroy()
         {
-            availableReferences?.ForEach(x => x.aReference.ReleaseAsset());
+            availableReferences?.ForEach(x => x.aReference?.ReleaseAsset());
             Addressables.InitializeAsync().Completed -= InitComplete;
         }
 
@@ -48,15 +48,22 @@ namespace _MAIN_APP.Scripts
 
         #region MAIN FUNCTIONS
 
-        public GameObject LoadAndInstantiate(AssetReference reference)
+        public GameObject GetInstanceOrCreate(AssetReference reference, Transform parent = null)
         {
-            if (availableReferences.Any(x => x.aReference == reference))
+            if (reference == null) return null;
+            var exist = availableReferences.Find(x => x.aReference == reference);
+            if (exist != null && exist.Go)
             {
                 return availableReferences.Find(x => x.aReference == reference)?.Go;
             }
+            else if (exist != null)
+            {
+                exist.Go = reference.InstantiateAsync(parent).WaitForCompletion();
+                return exist.Go;
+            }
 
             availableReferences.Add(new AddressableAssetEntry()
-                { aReference = reference, Go = reference.InstantiateAsync().WaitForCompletion() });
+                { aReference = reference, Go = reference.InstantiateAsync(parent).WaitForCompletion() });
 
             return availableReferences.Last().Go;
         }
@@ -71,23 +78,46 @@ namespace _MAIN_APP.Scripts
             availableReferences.Remove(obj);
         }
 
+        public void UnLoadAndDestroy(int goInstanceID)
+        {
+            if (availableReferences.All(x => x.Go.GetInstanceID() != goInstanceID)) return;
+
+            var obj = availableReferences.Find(x => x.Go.GetInstanceID() != goInstanceID);
+            Addressables.ReleaseInstance(obj.Go);
+            obj.aReference.ReleaseAsset();
+            availableReferences.Remove(obj);
+        }
+
+        public void UnLoadAndDestroy(ref List<AssetReference> references)
+        {
+            references?.ForEach(reference =>
+            {
+                var obj = availableReferences.Find(x => x.aReference == reference);
+                if (obj != null)
+                {
+                    if (obj?.Go) Addressables.ReleaseInstance(obj.Go);
+                    obj?.aReference.ReleaseAsset();
+                    availableReferences.Remove(obj);
+                }
+            });
+        }
+
         public static bool WasAssetDownloaded(AssetReference val)
         {
             var result = Addressables.GetDownloadSizeAsync(val).WaitForCompletion();
             return result <= 0;
         }
 
+        static readonly List<bool> _result = new List<bool>();
+
         public static bool WereAssetsDownloaded(AssetReference[] references)
         {
-            for (int i = 0; i < references.Length; i++)
-            {
-                if (Addressables.GetDownloadSizeAsync(references[i]).WaitForCompletion() <= 0)
-                {
-                    return true;
-                }
-            }
+            _result.Clear();
+            _result.AddRange(from t in references
+                where Addressables.GetDownloadSizeAsync(t).WaitForCompletion() <= 0
+                select true);
 
-            return false;
+            return _result.Any(x => x);
         }
 
         public void LoadLocal<T>(AssetReference val, out T outVal)

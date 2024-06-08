@@ -2588,7 +2588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackHeaderUI: {fileID: 265169777748582575}
-  soundbankBroker: {fileID: 11400000, guid: fbafc2a5db14dc4449a275a984bbadef, type: 2}
+  uiBroker: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
   uiListContainer: {fileID: 5645070131705763035}
   uiButtonPrefab: {fileID: 406439633161593880, guid: 5cee47374f4cf2241991caa2e44c4ad8, type: 3}
   dropdownFilter: {fileID: 3236164201275648376}
@@ -2869,6 +2869,18 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
         m_MethodName: DORestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
+        m_TargetAssemblyTypeName: _MAIN_APP.Scripts.Brokers.SoBrokerUiActions, Assembly-CSharp
+        m_MethodName: TriggerOnPlayCancelEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

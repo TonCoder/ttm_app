@@ -14,7 +14,13 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PAUSE_ALL = 3864097025U;
-        static const AkUniqueID PLAY_MAINAPPMUSIC_01 = 3801404519U;
+        static const AkUniqueID PLAY_CANCEL_SFX = 3630037376U;
+        static const AkUniqueID PLAY_CLICK_SFX = 2995851202U;
+        static const AkUniqueID PLAY_CONFIRM_SFX = 1898352658U;
+        static const AkUniqueID PLAY_ERROR_SFX = 1105831596U;
+        static const AkUniqueID PLAY_MAIN = 1193902085U;
+        static const AkUniqueID PLAY_PURCHASE_SFX = 2429227235U;
+        static const AkUniqueID PLAY_THE_BEGINNING = 1073294003U;
         static const AkUniqueID RESUME_ALL = 3679762312U;
         static const AkUniqueID STOP_ALL = 452547817U;
     } // namespace EVENTS
@@ -68,6 +74,7 @@ namespace AK
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID DLC_GENERALCOMBAT = 2272998813U;
         static const AkUniqueID MAIN = 3161908922U;
+        static const AkUniqueID UI_SFXS = 406145810U;
     } // namespace BANKS
 
     namespace BUSSES

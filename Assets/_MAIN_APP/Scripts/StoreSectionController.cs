@@ -13,7 +13,9 @@ namespace _MAIN_APP.Scripts
     public class StoreSectionController : MonoBehaviour
     {
         [Header("Sections Setup")] [SerializeField]
-        private Transform uiListContainer;
+        private SoBrokerUiActions uiBroker;
+
+        [SerializeField] private Transform uiListContainer;
 
         [SerializeField] private TMP_Dropdown dropdownFilter;
 
@@ -25,7 +27,7 @@ namespace _MAIN_APP.Scripts
 
         [SerializeField, Space(10)] private List<UiItemController> displayingItem = new List<UiItemController>();
 
-        private int _activeFilterIndex = 0;
+        private int _activeFilterIndex;
         private GameManager _manager;
         private SoExpansionDetails _selectedExpansion;
 
@@ -51,10 +53,10 @@ namespace _MAIN_APP.Scripts
             // setup filter list
             dropdownFilter.onValueChanged.AddListener(OnFilterChange);
 
-            foreach (var tag in _manager.availableExpansionses.GetTags)
+            foreach (var categories in _manager.availableExpansionses.GetTags)
             {
                 // setup dropdown options based on the filter
-                dropdownFilter.options.Add(new TMP_Dropdown.OptionData(tag.ToString()));
+                dropdownFilter.options.Add(new TMP_Dropdown.OptionData(categories.ToString()));
             }
 
             dropdownFilter.options.Sort((a, b) => string.Compare(a.text, b.text, StringComparison.Ordinal));
@@ -62,7 +64,7 @@ namespace _MAIN_APP.Scripts
             dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Free"));
             dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Owned"));
             dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Show All"));
-            
+
             dropdownFilter.captionText.text = "Show All";
             dropdownFilter.value = _activeFilterIndex;
         }
@@ -73,7 +75,7 @@ namespace _MAIN_APP.Scripts
             item.SetDisplayData(expansion.IsFree,
                 expansion.IsActive,
                 expansion.Details,
-                ShowBreakdownPopUp);
+                expansion.IsActive ? null : ShowBreakdownPopUp);
             displayingItem.Add(item);
         }
 
@@ -81,7 +83,7 @@ namespace _MAIN_APP.Scripts
         {
             if (_manager.availableExpansionses.GetExpansionById(id, out _selectedExpansion))
             {
-                Debug.Log("Purchase Button Selected");
+                Debug.Log("Store Expansion Selected");
                 expansionPopUpController.SetPupUpInfo(_selectedExpansion);
                 onExpansionSelected?.Invoke();
             }
@@ -97,7 +99,7 @@ namespace _MAIN_APP.Scripts
             // perform download on the object with addressable
             if (_manager.availableExpansionses.GetExpansionById(id, out var expansion))
             {
-                var scenesToCheck = expansion.audioScenes?.Select(x => x?.AudioReference).ToArray();
+                var scenesToCheck = expansion.audioTracks?.Select(x => x?.AudioReference).ToArray();
 
                 if (!AddressableManager.WereAssetsDownloaded(scenesToCheck))
                 {
@@ -111,7 +113,6 @@ namespace _MAIN_APP.Scripts
 
                     // get selected ui button
                     var selectedItemUi = displayingItem.FirstOrDefault(x => x.ID == expansion.Details.ID);
-
                     Debug.Log("Downloading item");
                     AddressableManager.Instance.DownloadAddressableList(
                         expansion.Details.ID,
@@ -120,9 +121,10 @@ namespace _MAIN_APP.Scripts
                         () =>
                         {
                             Debug.Log("Download completed!");
+                            selectedItemUi?.UpdateOwned(true);
 
                             //done save to active list
-                            BrokerUiActions.TriggerOnDownloadExpansion(expansion);
+                            uiBroker.TriggerOnDownloadExpansion(expansion);
                         },
                         OnErrorDownloading);
                 }
@@ -133,7 +135,7 @@ namespace _MAIN_APP.Scripts
 
                     Debug.Log("Expansion tracks are already downloaded");
                     displayingItem.FirstOrDefault(x => x.ID == expansion.Details.ID)?.UpdateOwned(true);
-                    BrokerUiActions.TriggerOnDownloadExpansion(expansion);
+                    uiBroker.TriggerOnDownloadExpansion(expansion);
                 }
             }
         }
@@ -155,7 +157,7 @@ namespace _MAIN_APP.Scripts
 
             if (val == 1) // Owned
             {
-                displayingItem.ForEach(x => x.gameObject.SetActive(x.IsOwned));
+                displayingItem.ForEach(x => x.gameObject.SetActive(x.IsActive));
                 return;
             }
 

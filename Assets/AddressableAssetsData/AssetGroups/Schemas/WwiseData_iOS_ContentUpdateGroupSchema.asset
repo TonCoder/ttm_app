@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf0ba758c3194f17a3a36e4cd4a4a91d, type: 3}
-  m_Name: Broker_SoundBank
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: WwiseData_iOS_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
+  m_Group: {fileID: 11400000, guid: f99ddc63b2a220345a9825e5f9e0acef, type: 2}
+  m_StaticContent: 0
