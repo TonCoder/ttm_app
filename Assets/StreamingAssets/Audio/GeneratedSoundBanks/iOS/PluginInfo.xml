@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PluginInfo Platform="iOS" BasePlatform="iOS">
+	<PluginLibs>
+		<PluginLib LibName="System" LibId="11403271" Type="AudioDevice"/>
+	</PluginLibs>
+	<FileHash>{39F2FC6A-F821-C76A-810A-860434338E5E}</FileHash>
+</PluginInfo>

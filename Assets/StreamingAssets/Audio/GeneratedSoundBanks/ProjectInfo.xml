@@ -3,13 +3,13 @@
 	<Project Name="October TTM Testing" GUID="{356D402B-427F-404A-A927-B3577908C910}" Generator="2023.1.0.8367"/>
 	<CacheRoot>../../../../../TTM/October TTM Testing/.cache</CacheRoot>
 	<Platforms>
-		<Platform Name="Android" GUID="{F7FE5E84-C548-43A3-96AE-954151AD51FA}" BasePlatform="Android" BasePlatformGUID="{A2D401DE-B8B6-4FEB-8142-137C34D507CA}" Path="../../../Wwise_Data/Banks/Android"/>
-		<Platform Name="iOS" GUID="{661896E2-C182-4397-90D0-436F37A97BC0}" BasePlatform="iOS" BasePlatformGUID="{ECE03DB4-F948-462D-B2BB-A9173012B1F8}" Path="../../../Wwise_Data/Banks/iOS"/>
-		<Platform Name="Windows" GUID="{0FE882F6-7549-4139-BA46-0A83C02D37BB}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../Wwise_Data/Banks/Windows"/>
+		<Platform Name="Android" GUID="{F7FE5E84-C548-43A3-96AE-954151AD51FA}" BasePlatform="Android" BasePlatformGUID="{A2D401DE-B8B6-4FEB-8142-137C34D507CA}" Path="../../../Wwise_Data/GeneratedSoundBanks/Android"/>
+		<Platform Name="iOS" GUID="{661896E2-C182-4397-90D0-436F37A97BC0}" BasePlatform="iOS" BasePlatformGUID="{ECE03DB4-F948-462D-B2BB-A9173012B1F8}" Path="../../../Wwise_Data/GeneratedSoundBanks/iOS"/>
+		<Platform Name="Windows" GUID="{0FE882F6-7549-4139-BA46-0A83C02D37BB}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../Wwise_Data/GeneratedSoundBanks/Windows"/>
 	</Platforms>
 	<Languages>
 		<Language Name="English(US)" Id="684519430" GUID="{5C24F4E9-691A-4E8E-8D17-E63628F2180B}" Default="true" UseAsStandIn="true"/>
 		<Language Name="SoundSeed Grain" Id="3532711372" GUID="{8999C24D-A191-4DAD-91FF-64B444E4FE29}"/>
 	</Languages>
-	<FileHash>{561B3E23-B480-2F07-260C-956A802E24C5}</FileHash>
+	<FileHash>{85F8CAA6-95E2-D63D-3204-CCB2790EC3FB}</FileHash>
 </ProjectInfo>

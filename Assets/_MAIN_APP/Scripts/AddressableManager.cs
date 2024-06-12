@@ -18,6 +18,7 @@ namespace _MAIN_APP.Scripts
 
         public static AddressableManager Instance;
         private AsyncOperationHandle<object>[] _startedList;
+        static readonly List<bool> _result = new List<bool>();
 
         private void Awake()
         {
@@ -48,7 +49,7 @@ namespace _MAIN_APP.Scripts
 
         #region MAIN FUNCTIONS
 
-        public GameObject GetInstanceOrCreate(AssetReference reference, Transform parent = null)
+        public GameObject CreateInstance(AssetReference reference, Transform parent = null)
         {
             if (reference == null) return null;
             var exist = availableReferences.Find(x => x.aReference == reference);
@@ -108,7 +109,6 @@ namespace _MAIN_APP.Scripts
             return result <= 0;
         }
 
-        static readonly List<bool> _result = new List<bool>();
 
         public static bool WereAssetsDownloaded(AssetReference[] references)
         {
@@ -120,19 +120,20 @@ namespace _MAIN_APP.Scripts
             return _result.Any(x => x);
         }
 
-        public void LoadLocal<T>(AssetReference val, out T outVal)
+        public void LoadAsync<T>(AssetReference val, Action<T> callback)
         {
             // if the reference val exist in the reference list then return it
             if (availableReferences.Any(x => x.aReference == val))
             {
-                outVal = availableReferences.FirstOrDefault(x => x.aReference == val)!.aReference.LoadAssetAsync<T>()
-                    .WaitForCompletion();
+                callback?.Invoke(availableReferences.FirstOrDefault(x => x.aReference == val)!.aReference
+                    .LoadAssetAsync<T>()
+                    .WaitForCompletion());
                 return;
             }
 
             // else add it to the list and then load it and return it
             availableReferences.Add(new AddressableAssetEntry() { aReference = val });
-            outVal = availableReferences.Last()!.aReference.LoadAssetAsync<T>().WaitForCompletion();
+            callback?.Invoke(availableReferences.Last()!.aReference.LoadAssetAsync<T>().WaitForCompletion());
         }
 
         private AsyncOperationHandle<object> LoadAsync(AssetReference val)

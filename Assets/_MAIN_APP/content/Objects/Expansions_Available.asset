@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6082386704343e4a071068ec32d9ef7, type: 3}
   m_Name: Expansions_Available
   m_EditorClassIdentifier: 
-  expansions:
-  - {fileID: 11400000, guid: 4f42553b7efd2d2499cf2252bbbd86cc, type: 2}
-  - {fileID: 11400000, guid: afcb3677683c1c64c862ae568488c4e6, type: 2}
+  expansions: []
   biomePath: Assets/_MAIN_APP/content/Objects/Expansions/

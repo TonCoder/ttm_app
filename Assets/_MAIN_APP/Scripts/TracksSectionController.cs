@@ -141,7 +141,7 @@ namespace _MAIN_APP.Scripts
                 }
 
                 // get the audio track and create a ref
-                _manager.ActiveTrack = AddressableManager.Instance.GetInstanceOrCreate(track.AudioReference)
+                _manager.ActiveTrack = AddressableManager.Instance.CreateInstance(track.AudioReference)
                     .GetComponent<ITrackActions>();
 
                 // play new track

@@ -38,11 +38,13 @@ namespace _MAIN_APP.Scripts
             Init();
         }
 
-        private void Init()
+        public void Init()
         {
+            if (_manager?.AvailableExpansions == null) return;
+
             SetupDropDownList();
             // create the item to the list
-            foreach (var expansion in _manager.availableExpansionses.Expansions)
+            foreach (var expansion in _manager.AvailableExpansions.Expansions)
             {
                 CreateUiButton(expansion);
             }
@@ -53,7 +55,7 @@ namespace _MAIN_APP.Scripts
             // setup filter list
             dropdownFilter.onValueChanged.AddListener(OnFilterChange);
 
-            foreach (var categories in _manager.availableExpansionses.GetTags)
+            foreach (var categories in _manager.AvailableExpansions.GetTags)
             {
                 // setup dropdown options based on the filter
                 dropdownFilter.options.Add(new TMP_Dropdown.OptionData(categories.ToString()));
@@ -81,7 +83,7 @@ namespace _MAIN_APP.Scripts
 
         private void ShowBreakdownPopUp(int id)
         {
-            if (_manager.availableExpansionses.GetExpansionById(id, out _selectedExpansion))
+            if (_manager.AvailableExpansions.GetExpansionById(id, out _selectedExpansion))
             {
                 Debug.Log("Store Expansion Selected");
                 expansionPopUpController.SetPupUpInfo(_selectedExpansion);
@@ -97,7 +99,7 @@ namespace _MAIN_APP.Scripts
         private void DownloadExpansion(int id)
         {
             // perform download on the object with addressable
-            if (_manager.availableExpansionses.GetExpansionById(id, out var expansion))
+            if (_manager.AvailableExpansions.GetExpansionById(id, out var expansion))
             {
                 var scenesToCheck = expansion.audioTracks?.Select(x => x?.AudioReference).ToArray();
 
@@ -170,9 +172,9 @@ namespace _MAIN_APP.Scripts
             displayingItem.ForEach(x => x.gameObject.SetActive(false));
             var category = Enum.Parse<ECategories>(dropdownFilter.options[val].text);
 
-            for (var i = 0; i < _manager.availableExpansionses.Expansions.Count; i++)
+            for (var i = 0; i < _manager.AvailableExpansions.Expansions.Count; i++)
             {
-                if (!_manager.availableExpansionses.Expansions[i].Details.Tags.Contains(category)) continue;
+                if (!_manager.AvailableExpansions.Expansions[i].Details.Tags.Contains(category)) continue;
                 displayingItem[i].gameObject.SetActive(true);
             }
         }

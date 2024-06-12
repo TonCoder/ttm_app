@@ -233,9 +233,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: _MAIN_APP.Scripts.UISfxController, Assembly-CSharp
-        m_MethodName: PlayPurchase
+      - m_Target: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
+        m_TargetAssemblyTypeName: _MAIN_APP.Scripts.Brokers.SoBrokerUiActions, Assembly-CSharp
+        m_MethodName: TriggerOnPlayPurchaseEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1480,7 +1480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 89699955378637766, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -55.895004
+      value: -55.89502
       objectReference: {fileID: 0}
     - target: {fileID: 89699955378637766, guid: 60f6dc96c6c3fac4c8eb54f9c55b437a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

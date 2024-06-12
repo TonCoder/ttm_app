@@ -17,11 +17,10 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e88c746c9bb698e418afac72d9fa2fbc
   m_SerializeEntries:
-  - m_GUID: 615bd6823b1ca194fa3f11e8e690976a
-    m_Address: Assets/Wwise_Data/Banks/Windows/Init.bnk
+  - m_GUID: 8139675cfc29a79419798b9530fcd35b
+    m_Address: Assets/Wwise_Data/GeneratedSoundBanks/Windows/Init.bnk
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - WWise Init
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 38d5ab88f2d629f43a16853b0f92a0ca, type: 2}

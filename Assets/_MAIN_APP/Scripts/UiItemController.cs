@@ -110,7 +110,7 @@ namespace _MAIN_APP.Scripts
             if (_title) _title.text = _displayData.Title;
             if (_artist) _artist.text = _displayData.Artist;
             if (bgImage) bgImage.sprite = _displayData.ItemImage ?? bgImage.sprite;
-            if (_qty) _qty.text = $"Scene qty: {_displayData.Qty}";
+            if (_qty) _qty.text = $"Track qty: {_displayData.Qty}";
             if (_isFree && freeTag)
                 freeTag.enabled = true;
             if (IsActive && ownedTag)

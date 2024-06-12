@@ -1,0 +1,15 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1073294003	Play_The_Beginning			\MainEvents\Play_The_Beginning	
+	1193902085	Play_Main			\MainEvents\Play_Main	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	2250165792	New_Switch_Group			\Default Work Unit\New_Switch_Group	
+
+Switch	ID	Name	Switch Group			Notes
+	133642231	General	New_Switch_Group			
+	491961918	Forest	New_Switch_Group			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	166312784	Battle	D:\Projects\TTM\October TTM Testing\.cache\iOS\SFX\Battle_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music SC\MainAppMusic\The Beginning\Battle		20483220
+	949752377	The daily Grind	D:\Projects\TTM\October TTM Testing\.cache\iOS\SFX\The daily Grind_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Music SC\MainAppMusic\The daily Grind\The daily Grind		11054688
+

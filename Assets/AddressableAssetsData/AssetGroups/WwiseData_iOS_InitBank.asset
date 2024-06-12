@@ -17,11 +17,10 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: eb3b62e2256670d489c1b5e7eef34470
   m_SerializeEntries:
-  - m_GUID: a34169751eebab9428115c162c6c49c2
-    m_Address: Assets/Wwise_Data/Banks/iOS/Init.bnk
+  - m_GUID: 139d6b4ef6c57d945adbde7ce0863515
+    m_Address: Assets/Wwise_Data/GeneratedSoundBanks/iOS/Init.bnk
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - WWise Init
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 38d5ab88f2d629f43a16853b0f92a0ca, type: 2}

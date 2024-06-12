@@ -72,7 +72,6 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID DLC_GENERALCOMBAT = 2272998813U;
         static const AkUniqueID MAIN = 3161908922U;
         static const AkUniqueID UI_SFXS = 406145810U;
     } // namespace BANKS

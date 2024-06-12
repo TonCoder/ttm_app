@@ -1316,6 +1316,7 @@ MonoBehaviour:
   _qty: {fileID: 5524264383657346729}
   thisBtn: {fileID: 4319591318260759100}
   freeTag: {fileID: 0}
+  ownedOverlay: {fileID: 0}
   ownedTag: {fileID: 0}
   priceTag: {fileID: 0}
   priceTagText: {fileID: 0}
@@ -2592,8 +2593,7 @@ MonoBehaviour:
   uiListContainer: {fileID: 5645070131705763035}
   uiButtonPrefab: {fileID: 406439633161593880, guid: 5cee47374f4cf2241991caa2e44c4ad8, type: 3}
   dropdownFilter: {fileID: 3236164201275648376}
-  displayingItem: []
-  onSceneSelected:
+  onTrackSelected:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -2881,6 +2881,18 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
         m_TargetAssemblyTypeName: _MAIN_APP.Scripts.Brokers.SoBrokerUiActions, Assembly-CSharp
         m_MethodName: TriggerOnPlayCancelEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7828622982792168883}
+        m_TargetAssemblyTypeName: _MAIN_APP.Scripts.TracksSectionController, Assembly-CSharp
+        m_MethodName: RemoveUnusedBanks
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3242,7 +3254,7 @@ PrefabInstance:
       objectReference: {fileID: 8103139497520762465}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: hasOnPlay
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: hasOnStart
@@ -3270,15 +3282,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: onPlay.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: onPlay.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -3298,7 +3310,7 @@ PrefabInstance:
       objectReference: {fileID: 3409619776552873490}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: onPlay.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DOPlayBackwards
+      value: set_enabled
       objectReference: {fileID: 0}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -3318,11 +3330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: onPlay.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
+      value: UnityEngine.Behaviour, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: onPlay.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 477387208936599939, guid: 4deae89a173e44e4d959ebd3a3914370, type: 3}
       propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -3559,7 +3571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940058214919267702, guid: e739a42394269b34598a52d34bb14b60, type: 3}
       propertyPath: hasOnComplete
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6940058214919267702, guid: e739a42394269b34598a52d34bb14b60, type: 3}
       propertyPath: useTargetAsV3

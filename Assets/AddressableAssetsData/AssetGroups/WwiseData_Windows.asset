@@ -17,19 +17,13 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: dc055358089d0cf4b90cac9890221c5e
   m_SerializeEntries:
-  - m_GUID: 9d2a1fb33bbc8ab4fbe9f489dd8a5a33
-    m_Address: Assets/Wwise_Data/Banks/Windows/Main.bnk
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SoundBanks
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3e90a6e3fd03b2243b32403e14516f6a
-    m_Address: Assets/Wwise_Data/Banks/Windows/UI_SFXs.bnk
+  - m_GUID: df72802635f95864495d1d7909845657
+    m_Address: Assets/Wwise_Data/GeneratedSoundBanks/Windows/UI_SFXs.bnk
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ebd738b980474d942a48c52c93969722
-    m_Address: Assets/Wwise_Data/Banks/Windows/DLC_GeneralCombat.bnk
+  - m_GUID: 31a2bb3de397db84080142b65c4affca
+    m_Address: Assets/Wwise_Data/GeneratedSoundBanks/Windows/Main.bnk
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

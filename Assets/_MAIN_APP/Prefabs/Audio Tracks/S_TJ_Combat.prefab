@@ -342,6 +342,7 @@ MonoBehaviour:
   _qty: {fileID: 6618027813745920049}
   thisBtn: {fileID: 8524194657810593850}
   freeTag: {fileID: 0}
+  ownedOverlay: {fileID: 0}
   ownedTag: {fileID: 0}
   priceTag: {fileID: 0}
   priceTagText: {fileID: 0}

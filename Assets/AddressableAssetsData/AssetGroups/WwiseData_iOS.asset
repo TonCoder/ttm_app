@@ -17,18 +17,13 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e3f171731f7b21644a5047c0dca0277d
   m_SerializeEntries:
-  - m_GUID: b95dded9151f1424b8d7ab6381f0203e
-    m_Address: Assets/Wwise_Data/Banks/iOS/Main.bnk
+  - m_GUID: a77ad6a603799ef458a80ccad7e79133
+    m_Address: Assets/Wwise_Data/GeneratedSoundBanks/iOS/Main.bnk
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 840912d0b18ebf042b1616465204eba8
-    m_Address: Assets/Wwise_Data/Banks/iOS/UI_SFXs.bnk
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e1d00ee4253419043adee4e8d9f29014
-    m_Address: Assets/Wwise_Data/Banks/iOS/DLC_GeneralCombat.bnk
+  - m_GUID: 9a352540a6f425f43b2c15ec77dc9a73
+    m_Address: Assets/Wwise_Data/GeneratedSoundBanks/iOS/UI_SFXs.bnk
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
