@@ -8,8 +8,10 @@ namespace _MAIN_APP.Scripts.Brokers
     public class SoBrokerUiActions : ScriptableObject
     {
         public Action<int> OnSelectedExpansion;
+        public Action<int> OnDeleteExpansion;
         public Action<int> OnSelectedTrack;
         public Action<SoExpansionDetails> OnDownloadExpansion;
+        public Action OnResetStore;
 
         public Action OnPlayClickEvent;
         public Action OnPlayConfirmEvent;
@@ -26,7 +28,9 @@ namespace _MAIN_APP.Scripts.Brokers
         public void TriggerOnDownloadExpansion(SoExpansionDetails val) => OnDownloadExpansion?.Invoke(val);
 
         public void TriggerOnSelectedABiome(int val) => OnSelectedExpansion?.Invoke(val);
+        public void TriggerDeleteExpansion(int val) => OnDeleteExpansion?.Invoke(val);
 
+        public void TriggerOnResetStore() => OnResetStore?.Invoke();
         public void TriggerOnSelectedTrack(int val) => OnSelectedTrack?.Invoke(val);
     }
 }

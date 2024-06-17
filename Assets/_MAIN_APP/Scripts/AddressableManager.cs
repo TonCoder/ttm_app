@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -136,7 +137,7 @@ namespace _MAIN_APP.Scripts
             callback?.Invoke(availableReferences.Last()!.aReference.LoadAssetAsync<T>().WaitForCompletion());
         }
 
-        private AsyncOperationHandle<object> LoadAsync(AssetReference val)
+        public AsyncOperationHandle<object> LoadAsync(AssetReference val)
         {
             // else add it to the list and then load it and return it
             availableReferences.Add(new AddressableAssetEntry() { aReference = val });
@@ -169,6 +170,20 @@ namespace _MAIN_APP.Scripts
         {
             availableReferences?.ForEach(x => x.aReference.ReleaseAsset());
             availableReferences?.Clear();
+        }
+
+        #endregion
+
+        #region Delete Cache and downloaded
+
+        public void DeleteCacheAndDownload(AssetReference reference)
+        {
+            // Addressables.Release(reference);
+            var status = Addressables.ClearDependencyCacheAsync(reference.RuntimeKey, true).WaitForCompletion();
+
+#if UNITY_EDITOR
+            Debug.Log($"Cache cleared-- {status}");
+#endif
         }
 
         #endregion
@@ -231,8 +246,9 @@ namespace _MAIN_APP.Scripts
             try
             {
                 if (_itemToLoadAsync.ContainsKey(id)) return;
-                _startedList = new AsyncOperationHandle<object>[] { };
 
+                Debug.Log("Downloading list...");
+                _startedList = new AsyncOperationHandle<object>[] { };
                 // start download process
                 for (int i = 0; i < references.Length; i++)
                 {
@@ -241,7 +257,9 @@ namespace _MAIN_APP.Scripts
 
                 // store into list
                 _itemToLoadAsync.Add(id, _startedList);
-                _startedList = null;
+
+                Debug.Log("Getting status...");
+
                 StartCoroutine(DownloadStatus(id, progress, onComplete));
             }
             catch (Exception e)
@@ -254,20 +272,24 @@ namespace _MAIN_APP.Scripts
             Action<float> progress,
             Action onComplete)
         {
+            Debug.Log($"Looping through loading items.. current ID: {id}");
+
             for (int i = 0; i < _itemToLoadAsync[id].Count(); i++)
             {
                 while (!_itemToLoadAsync[id][i].IsDone)
                 {
                     var status = _itemToLoadAsync[id][i].GetDownloadStatus();
-                    progress?.Invoke(status.Percent / _itemToLoadAsync.Count);
+                    progress?.Invoke(status.Percent / _itemToLoadAsync[id].Count());
                     yield return null;
                 }
+
+                Debug.Log($"{(i + 1)} Item done of {_itemToLoadAsync[id].Count()}");
             }
 
             onComplete?.Invoke();
             Debug.Log("Releasing downloaded asset");
             Debug.Log("This is performed to prevent hoggin of memory while asset is not in use");
-            foreach (var vHandle in _itemToLoadAsync[id])
+            foreach (AsyncOperationHandle<object> vHandle in _itemToLoadAsync[id])
             {
                 ReleaseAsset((AssetReference)vHandle.Result);
             }

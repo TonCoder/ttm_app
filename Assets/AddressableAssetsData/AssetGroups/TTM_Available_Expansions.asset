@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: TTM_Available_Expansions
+  m_EditorClassIdentifier: 
+  m_GroupName: TTM_Available_Expansions
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9dc81adbb3c28164785f205008a0797f
+  m_SerializeEntries:
+  - m_GUID: fe68bc9f97fb3c545888217a35f1b327
+    m_Address: Assets/_MAIN_APP/content/Objects/Expansions_Available.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - REMOTE
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c88c7a0fc07a8c44f9cd954af24d9d90, type: 2}
+    - {fileID: 11400000, guid: dfd18d1cfb5e00a489b6f925177b353f, type: 2}

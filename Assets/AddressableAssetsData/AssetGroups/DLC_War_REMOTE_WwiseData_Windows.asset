@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: DLC_War_REMOTE_WwiseData_Windows
+  m_EditorClassIdentifier: 
+  m_GroupName: DLC_War_REMOTE_WwiseData_Windows
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 64d417640acb1d74289618806c9d6af7
+  m_SerializeEntries:
+  - m_GUID: c576c557db4e1a240b4b53b5976de8f2
+    m_Address: Assets/Wwise_Data/Banks/Windows/DLC_War.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - REMOTE
+    - BANKS
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fb5fbcc873a112748aba36d9ca3e8055, type: 2}
+    - {fileID: 11400000, guid: c36a807b60aad9b4b8cbced6c2a61650, type: 2}

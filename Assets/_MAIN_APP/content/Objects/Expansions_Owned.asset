@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Expansions_Owned
   m_EditorClassIdentifier: 
   expansions: []
-  biomePath: Assets/_MAIN_APP/content/Objects/Biomes
+  biomePath: Assets/_MAIN_APP/content/Objects/Expansions

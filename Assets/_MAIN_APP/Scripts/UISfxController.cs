@@ -1,5 +1,6 @@
 using _MAIN_APP.Scripts.Brokers;
 using CreativeVeinStudio.Simple_Dialogue_System.Attributes;
+using UnityEditor;
 using UnityEngine;
 
 namespace _MAIN_APP.Scripts
@@ -15,9 +16,17 @@ namespace _MAIN_APP.Scripts
         public AK.Wwise.Event errorEvent;
         public AK.Wwise.Event purchaseEvent;
 
-        private void Awake()
+        private void Start()
         {
             thisGo ??= this.gameObject.GetComponent<AkGameObj>();
+            GetBrokerAndRegister();
+        }
+
+        private void GetBrokerAndRegister()
+        {
+            if (!GameManager.Instance.UiBroker) return;
+            UiBroker = GameManager.Instance.UiBroker;
+            
             UiBroker.OnPlayClickEvent += PlayClick;
             UiBroker.OnPlayConfirmEvent += PlayConfirm;
             UiBroker.OnPlayCancelEvent += PlayCancel;

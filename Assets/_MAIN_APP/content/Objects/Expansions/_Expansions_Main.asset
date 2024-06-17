@@ -19,12 +19,12 @@ MonoBehaviour:
     <ItemImage>k__BackingField: {fileID: 21300000, guid: 85a5b03cee63ca442a6d5b93d1c2aacd, type: 3}
     <Artist>k__BackingField: Austin Blau
     <Tags>k__BackingField: 0100000000000000
-  expansionBank:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3c76e67f6e9d77645b13ea644fa3d777, type: 2}
   audioTracks:
   - {fileID: 11400000, guid: 5df1f06708221504e86b073c525d38b8, type: 2}
   - {fileID: 11400000, guid: 36050eb0c0b75cd43a7e209aa9445ade, type: 2}
-  <IsFree>k__BackingField: 1
+  <ExpansionBankReference>k__BackingField:
+    m_AssetGUID: 710450eee97ece04bb59962048b91037
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   <IsActive>k__BackingField: 0

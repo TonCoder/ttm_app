@@ -3,6 +3,7 @@ using _MAIN_APP.Scripts.Models;
 using CreativeVeinStudio.Simple_Dialogue_System.Attributes;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace _MAIN_APP.Scripts
@@ -13,6 +14,8 @@ namespace _MAIN_APP.Scripts
         [FieldTitle("General Settings")] [SerializeField]
         private TextMeshProUGUI _title;
 
+        [SerializeField] private Button deleteBtn;
+        [SerializeField] private Button confirmDeleteBtn;
         [SerializeField] private TextMeshProUGUI _artist;
         [SerializeField] private Image bgImage;
         [SerializeField] private TextMeshProUGUI _qty;
@@ -42,6 +45,7 @@ namespace _MAIN_APP.Scripts
         {
             _isFree = isFree;
             _isActive = isActive;
+            deleteBtn?.gameObject.SetActive(false);
             if (thisBtn) thisBtn.enabled = !isActive;
             priceTag.enabled = !isActive && !isFree;
             priceTagText.text = $"${data.Price}";
@@ -53,13 +57,25 @@ namespace _MAIN_APP.Scripts
             // _displayData = new UIDisplayData(data.ID, data.Title, data.Artist, data.Qty, data.ItemImage);
             _displayData = data;
             _itemId = data.ID;
-
             //update ui with new info
             UpdateContent();
             if (btnAction != null)
             {
+                thisBtn.onClick.RemoveAllListeners();
                 thisBtn.onClick.AddListener(() => btnAction?.Invoke(_displayData.ID));
             }
+        }
+
+        public void SetDisplayData(UIDisplayData data, Action<int> btnAction, Action<int> deleteAction)
+        {
+            deleteBtn?.gameObject.SetActive(deleteAction != null);
+            if (deleteAction != null)
+            {
+                confirmDeleteBtn.onClick.RemoveAllListeners();
+                confirmDeleteBtn.onClick.AddListener(() => deleteAction?.Invoke(data.ID));
+            }
+
+            SetDisplayData(data, btnAction);
         }
 
         public void DownloadProgress(float progress)

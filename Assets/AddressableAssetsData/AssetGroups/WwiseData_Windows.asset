@@ -15,21 +15,18 @@ MonoBehaviour:
   m_GroupName: WwiseData_Windows
   m_Data:
     m_SerializedData: []
-  m_GUID: dc055358089d0cf4b90cac9890221c5e
+  m_GUID: 985b04258f87a0a4283c1aabcfcaa135
   m_SerializeEntries:
-  - m_GUID: df72802635f95864495d1d7909845657
-    m_Address: Assets/Wwise_Data/GeneratedSoundBanks/Windows/UI_SFXs.bnk
+  - m_GUID: cd0a87a57905d7745a3b782ea22c56da
+    m_Address: Assets/Wwise_Data/Banks/Windows/UI_SFXs.bnk
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 31a2bb3de397db84080142b65c4affca
-    m_Address: Assets/Wwise_Data/GeneratedSoundBanks/Windows/Main.bnk
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - BANKS
+    - LOCAL
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: 38d5ab88f2d629f43a16853b0f92a0ca, type: 2}
+  m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: edb8eafe4e5fd5d44a1e9137f556b6de, type: 2}
-    - {fileID: 11400000, guid: 81aa725d4d1b4fd429e3c2d697de8309, type: 2}
+    - {fileID: 11400000, guid: 0aa083d3912fd9d4ab7767ea58576d1d, type: 2}
+    - {fileID: 11400000, guid: 03791674d19fbca4fb9d8c7593d6344c, type: 2}

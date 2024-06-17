@@ -5,6 +5,7 @@ using _MAIN_APP.Scripts.Enums;
 using _MAIN_APP.Scripts.Models;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace _MAIN_APP.Scripts.ScriptableObjects
 {
@@ -12,16 +13,22 @@ namespace _MAIN_APP.Scripts.ScriptableObjects
     public class SoExpansionDetails : ScriptableObject
     {
         [SerializeField] private UIDisplayData details = new UIDisplayData();
-        [SerializeField] private AK.Wwise.Bank expansionBank = new AK.Wwise.Bank();
 
         [SerializeField] [ItemCanBeNull] internal List<SoAudioTrackDetails> audioTracks =
             new List<SoAudioTrackDetails>();
 
-        public AK.Wwise.Bank ExpansionBank => expansionBank;
-        [field: SerializeField] public bool IsFree { get; private set; }
+        [field: SerializeField] public AssetReference ExpansionBankReference { get; private set; }
         [field: SerializeField] public bool IsActive { get; internal set; }
 
-        public UIDisplayData Details => details;
+        public UIDisplayData Details
+        {
+            get
+            {
+                details.Qty = audioTracks.Count;
+                return details;
+            }
+            internal set => details = value;
+        }
 
         public IEnumerable<ECategories> GetTrackTags =>
             audioTracks.SelectMany(x => x?.details.Tags).Distinct();
@@ -33,11 +40,6 @@ namespace _MAIN_APP.Scripts.ScriptableObjects
             if (!exist) return false;
             audioTrack = exist;
             return true;
-        }
-
-        private void OnValidate()
-        {
-            details.Qty = audioTracks.Count;
         }
     }
 }

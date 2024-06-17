@@ -15,21 +15,26 @@ MonoBehaviour:
   m_GroupName: WwiseData_iOS
   m_Data:
     m_SerializedData: []
-  m_GUID: e3f171731f7b21644a5047c0dca0277d
+  m_GUID: 9a1d638e70d40714dac3ff7272232646
   m_SerializeEntries:
-  - m_GUID: a77ad6a603799ef458a80ccad7e79133
-    m_Address: Assets/Wwise_Data/GeneratedSoundBanks/iOS/Main.bnk
+  - m_GUID: 2eaf4249184cf334fb0b4f6eb5aa5c30
+    m_Address: Assets/Wwise_Data/Banks/iOS/UI_SFXs.bnk
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9a352540a6f425f43b2c15ec77dc9a73
-    m_Address: Assets/Wwise_Data/GeneratedSoundBanks/iOS/UI_SFXs.bnk
+  - m_GUID: 53a40b222ba92784f8e9b4f98e0057ae
+    m_Address: Assets/Wwise_Data/Banks/iOS/Main.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe48abd57ac87e84181d491e3fb930b8
+    m_Address: Assets/Wwise_Data/Banks/iOS/DLC_War.bnk
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: 38d5ab88f2d629f43a16853b0f92a0ca, type: 2}
+  m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 40b8997ae2c02a1488ae363aafb0018c, type: 2}
-    - {fileID: 11400000, guid: e9910d917585b6b449cfb1f3cf223917, type: 2}
+    - {fileID: 11400000, guid: aff54083f38d5fd418e1d1f7c3777c84, type: 2}
+    - {fileID: 11400000, guid: 71d5153bc9f66894aabc1ecc4c9460df, type: 2}

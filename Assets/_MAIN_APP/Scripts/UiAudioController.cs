@@ -1,22 +1,37 @@
 using System;
 using _MAIN_APP.Scripts.Interfaces;
+using _MAIN_APP.Scripts.ScriptableObjects;
+using CreativeVeinStudio.Simple_Dialogue_System.Attributes;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace _MAIN_APP.Scripts
 {
     public class UiAudioController : MonoBehaviour
     {
-        public AK.Wwise.Event aPauseEvent;
+        [FieldTitle("Track info setup")] [SerializeField]
+        private Image trackImage;
+
+        [SerializeField] private TextMeshProUGUI trackName;
+
+        [FieldTitle("Wwise Event Setup")] public AK.Wwise.Event aPauseEvent;
         public AK.Wwise.Event aStopEvent;
         public AK.Wwise.Event aResumeEvent;
 
-        public UnityEvent onPlay;
+        [FieldTitle("Button Events")] public UnityEvent onPlay;
         public UnityEvent onStop;
         public UnityEvent onPause;
         public UnityEvent onResume;
 
         private ITrackActions _soundBank => GameManager.Instance?.ActiveTrack;
+
+        public void SetTrackInfo(SoAudioTrackDetails track)
+        {
+            trackImage.sprite = track.details.ItemImage;
+            trackName.text = track.details.Title;
+        }
 
         public void Play()
         {

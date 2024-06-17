@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_MAIN_APP/Scenes/SampleScene.unity
+    path: Assets/_MAIN_APP/Scenes/TTMScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: dc5c878f27d77ec428e745b5b3a1429b, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: 3f3aab63b0f291f47a10b5eb5cee253d, type: 2}

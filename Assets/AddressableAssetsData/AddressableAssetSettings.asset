@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468a46d0ae32c3544b7d98094e6448a9, type: 3}
   m_Name: AddressableAssetSettings
   m_EditorClassIdentifier: 
-  m_DefaultGroup: c573536c5f745cb42b995aa88473536c
+  m_DefaultGroup: d84792d95f93f5d4397966f7b727f869
   m_currentHash:
     serializedVersion: 2
-    Hash: 82ba8ab792b1cc0e0057c3e6e9956151
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_BundleLocalCatalog: 0
@@ -35,27 +35,29 @@ MonoBehaviour:
   m_CheckForContentUpdateRestrictionsOption: 0
   m_MonoScriptBundleCustomNaming: 
   m_RemoteCatalogBuildPath:
-    m_Id: 3710e7c508ef7a24281faa11997c395c
+    m_Id: 5824253846f5aa344a658129fff6f552
   m_RemoteCatalogLoadPath:
-    m_Id: 0bd75e605e7a92d4bac68c6d5e2ec55a
+    m_Id: 871094280d05b9c4388caaaa8f2211e7
   m_ContentStateBuildPathProfileVariableName: <default settings path>
   m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
   m_GroupAssets:
-  - {fileID: 11400000, guid: af5efab9e95fa7b4bbb8f1b587caa257, type: 2}
-  - {fileID: 11400000, guid: 24e9798de9bcb674584a964ab399797a, type: 2}
-  - {fileID: 11400000, guid: b0d9dbe495ad0d045b095483b16853f6, type: 2}
-  - {fileID: 11400000, guid: 57c10de604056574fbc1f74921590dce, type: 2}
-  - {fileID: 11400000, guid: 8f382fc535c7a0246a46425d66b07869, type: 2}
-  - {fileID: 11400000, guid: 480a28bbaf1bc914cb2e81f5ea38268f, type: 2}
-  - {fileID: 11400000, guid: 9b8c3c04768960749aeae34b0d50d654, type: 2}
-  - {fileID: 11400000, guid: 447857937d4ca0844b555ba5818b9cb7, type: 2}
-  - {fileID: 11400000, guid: 0544041d9650f664fb56852202e6fa94, type: 2}
-  - {fileID: 11400000, guid: f99ddc63b2a220345a9825e5f9e0acef, type: 2}
-  - {fileID: 11400000, guid: e2a3880f216dd644e8957631e5989874, type: 2}
-  - {fileID: 11400000, guid: 7081538cfbfc4ea49b25a65cd45fadfb, type: 2}
+  - {fileID: 11400000, guid: 08b4c9c78f4ee5f4c9afae6e6e29c1c1, type: 2}
+  - {fileID: 11400000, guid: 26f8c84e544921343afc1f5a06cccf7d, type: 2}
+  - {fileID: 11400000, guid: d4918c05bbb4b06448bfd9089db9731c, type: 2}
+  - {fileID: 11400000, guid: db45ad266f259d04c87bfba8be2206e1, type: 2}
+  - {fileID: 11400000, guid: d650e827039e3114e9a743516e916381, type: 2}
+  - {fileID: 11400000, guid: 56bb47a9f0ef8214a86b28edf7ced8a0, type: 2}
+  - {fileID: 11400000, guid: 2aa559a5576506447985471edf243721, type: 2}
+  - {fileID: 11400000, guid: 78682ed9d1b344045b2a6b0a5f201f86, type: 2}
+  - {fileID: 11400000, guid: e43a25eca525e7d4797359ab29665830, type: 2}
+  - {fileID: 11400000, guid: 662e5a59d289c864fadb810a6ebc2baf, type: 2}
+  - {fileID: 11400000, guid: 946f4c4ad03ca504887eaae41c1dc095, type: 2}
+  - {fileID: 11400000, guid: cb97a26cba66c1642be01d4b8afc80fd, type: 2}
+  - {fileID: 11400000, guid: 5dc5d5b4612f70c468e85f8eb5fefa8f, type: 2}
+  - {fileID: 11400000, guid: bd657a9ab50d32549b2a536edca68ffa, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -64,78 +66,75 @@ MonoBehaviour:
   m_ProfileSettings:
     m_Profiles:
     - m_InheritedParent: 
-      m_Id: 44052ba9e5dce194cac35f5be6780494
+      m_Id: 54fc5c4240949fa43beaafc9aabd8794
       m_ProfileName: Default
       m_Values:
-      - m_Id: 78077786d31d6db4aa3a82f7f5c14295
+      - m_Id: f5a98ae79696d174b80da22e3df68f69
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
-      - m_Id: e118751bf424e24488e6eac6e40aae76
+      - m_Id: 936a91ddac451ef4e9952c45ce0970fd
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
-      - m_Id: f7388146f0a9b7b44b632f307db24891
+      - m_Id: 5af4fc11821168241a90e95654ab476d
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
-      - m_Id: 3710e7c508ef7a24281faa11997c395c
+      - m_Id: 5824253846f5aa344a658129fff6f552
         m_Value: ServerData/[BuildTarget]
-      - m_Id: 0bd75e605e7a92d4bac68c6d5e2ec55a
+      - m_Id: 871094280d05b9c4388caaaa8f2211e7
         m_Value: http://[PrivateIpAddress]:[HostingServicePort]
     - m_InheritedParent: 
-      m_Id: 93c0c310db7691949addd846ec17ba53
-      m_ProfileName: HostFiles
+      m_Id: 53375eab7749f154b9a6df20d429b57f
+      m_ProfileName: CustomProfile
       m_Values:
-      - m_Id: 78077786d31d6db4aa3a82f7f5c14295
+      - m_Id: f5a98ae79696d174b80da22e3df68f69
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
-      - m_Id: e118751bf424e24488e6eac6e40aae76
+      - m_Id: 936a91ddac451ef4e9952c45ce0970fd
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
-      - m_Id: f7388146f0a9b7b44b632f307db24891
+      - m_Id: 5af4fc11821168241a90e95654ab476d
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
-      - m_Id: 3710e7c508ef7a24281faa11997c395c
+      - m_Id: 5824253846f5aa344a658129fff6f552
         m_Value: ServerData/[BuildTarget]
-      - m_Id: 0bd75e605e7a92d4bac68c6d5e2ec55a
+      - m_Id: 871094280d05b9c4388caaaa8f2211e7
         m_Value: https://creativevein.studio/ttm/[UnityEditor.EditorUserBuildSettings.activeBuildTarget]/
     m_ProfileEntryNames:
-    - m_Id: 78077786d31d6db4aa3a82f7f5c14295
+    - m_Id: f5a98ae79696d174b80da22e3df68f69
       m_Name: BuildTarget
       m_InlineUsage: 0
-    - m_Id: e118751bf424e24488e6eac6e40aae76
+    - m_Id: 936a91ddac451ef4e9952c45ce0970fd
       m_Name: Local.BuildPath
       m_InlineUsage: 0
-    - m_Id: f7388146f0a9b7b44b632f307db24891
+    - m_Id: 5af4fc11821168241a90e95654ab476d
       m_Name: Local.LoadPath
       m_InlineUsage: 0
-    - m_Id: 3710e7c508ef7a24281faa11997c395c
+    - m_Id: 5824253846f5aa344a658129fff6f552
       m_Name: Remote.BuildPath
       m_InlineUsage: 0
-    - m_Id: 0bd75e605e7a92d4bac68c6d5e2ec55a
+    - m_Id: 871094280d05b9c4388caaaa8f2211e7
       m_Name: Remote.LoadPath
       m_InlineUsage: 0
     m_ProfileVersion: 1
   m_LabelTable:
     m_LabelNames:
     - default
-    - WWise Init
-    - SoundBanks
-    - Biome Asset
-    - PrefabScene
-    - Build
-    - Remote
+    - REMOTE
+    - BANKS
+    - LOCAL
+    - PREFABS
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
-  - {fileID: 11400000, guid: 953c0c27c5abd2547bbfb7f7f9bb1374, type: 2}
+  - {fileID: 11400000, guid: 2c455f83bffc2dd4db04632014ded6df, type: 2}
   m_InitializationObjects: []
   m_CertificateHandlerType:
     m_AssemblyName: 
     m_ClassName: 
   m_ActivePlayerDataBuilderIndex: 4
   m_DataBuilders:
-  - {fileID: 11400000, guid: f0f804cc60c4b7d48ac1633a4ebd88fb, type: 2}
-  - {fileID: 11400000, guid: 78b2acdd28a2b974293168806e9b35d2, type: 2}
-  - {fileID: 11400000, guid: e293baaf1ebc69d47a744bb7faa5336d, type: 2}
-  - {fileID: 11400000, guid: 5036a890258350b4a8f5af9188ff249f, type: 2}
-  - {fileID: 11400000, guid: acbd454c3302fd344a5580a5759725b8, type: 2}
-  m_ActiveProfileId: 93c0c310db7691949addd846ec17ba53
+  - {fileID: 11400000, guid: fe625a56d2c4d9e4d91d69450380c5df, type: 2}
+  - {fileID: 11400000, guid: f33b29cd180e8b045b25b42f7560e270, type: 2}
+  - {fileID: 11400000, guid: 0600e7af9386b524499b68ca46a1dbc1, type: 2}
+  - {fileID: 11400000, guid: 42db15057e7e5ea44b2dfad9d6de2f58, type: 2}
+  - {fileID: 11400000, guid: a4b03470be95c724ea842166d0b7dd31, type: 2}
+  m_ActiveProfileId: 53375eab7749f154b9a6df20d429b57f
   m_HostingServicesManager:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}
-    m_NextInstanceId: 1
-    m_RegisteredServiceTypeRefs:
-    - UnityEditor.AddressableAssets.HostingServices.HttpHostingService, Unity.Addressables.Editor
+    m_NextInstanceId: 0
+    m_RegisteredServiceTypeRefs: []
     m_PingTimeoutInMilliseconds: 5000

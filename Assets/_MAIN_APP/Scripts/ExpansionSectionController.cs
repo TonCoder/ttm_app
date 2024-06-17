@@ -41,29 +41,43 @@ namespace _MAIN_APP.Scripts
 
         private void DownloadedNewBiome(SoExpansionDetails soExpansionDetails)
         {
-            dropdownFilter.options.Clear();
             Init();
         }
 
-        private void Init()
+        public void Init()
         {
+            if (!_manager?.ownedExpansions) return;
+
             SetupDropdownList();
+
             // create the item to the list
-            foreach (var biome in _manager.ownedExpansionses.Expansions)
+            for (var i = 0; i < _manager.ownedExpansions.Expansions.Count; i++)
             {
+                var biome = _manager.ownedExpansions.Expansions[i];
                 if (biome)
-                    CreateUiButton(biome);
+                {
+                    if ((displayingItem.Count - 1) >= i)
+                    {
+                        displayingItem[i].SetDisplayData(biome.Details, OnBiomeClicked, OnDeleteBiomeClicked);
+                    }
+                    else
+                    {
+                        CreateUiButton(biome);
+                    }
+                }
             }
 
-            noExpansionNotice.gameObject.SetActive(_manager.ownedExpansionses.Expansions.Count <= 0);
+            noExpansionNotice.gameObject.SetActive(_manager.ownedExpansions.Expansions.Count <= 0);
         }
 
         private void SetupDropdownList()
         {
+            dropdownFilter.options.Clear();
+
             // setup filter list
             dropdownFilter.onValueChanged.AddListener(OnFilterChange);
 
-            foreach (var categories in _manager.ownedExpansionses.GetTags)
+            foreach (var categories in _manager.ownedExpansions.GetTags)
             {
                 // setup dropdown options based on the filter
                 dropdownFilter.options.Add(new TMP_Dropdown.OptionData(categories.ToString()));
@@ -79,7 +93,7 @@ namespace _MAIN_APP.Scripts
         private void CreateUiButton(in SoExpansionDetails expansion)
         {
             var item = Instantiate(uiItemPrefab, uiListContainer).GetComponent<UiItemController>();
-            item.SetDisplayData(expansion.Details, OnBiomeClicked);
+            item.SetDisplayData(expansion.Details, OnBiomeClicked, OnDeleteBiomeClicked);
             displayingItem.Add(item);
         }
 
@@ -89,9 +103,14 @@ namespace _MAIN_APP.Scripts
             onBiomeSelected?.Invoke();
         }
 
+        private void OnDeleteBiomeClicked(int id)
+        {
+            uiBroker.TriggerDeleteExpansion(id);
+        }
+
         private void SetExistingUIObject(int index)
         {
-            displayingItem[index].SetDisplayData(_manager.ownedExpansionses.Expansions[index].Details,
+            displayingItem[index].SetDisplayData(_manager.ownedExpansions.Expansions[index].Details,
                 uiBroker.TriggerOnSelectedABiome);
             displayingItem[index].gameObject.SetActive(true);
         }
@@ -102,7 +121,7 @@ namespace _MAIN_APP.Scripts
             _activeFilterIndex = val;
             if (val == 0) // show all
             {
-                for (var i = 0; i < _manager.ownedExpansionses.Expansions.Count; i++)
+                for (var i = 0; i < _manager.ownedExpansions.Expansions.Count; i++)
                 {
                     SetExistingUIObject(i);
                 }
@@ -112,9 +131,9 @@ namespace _MAIN_APP.Scripts
 
             displayingItem.ForEach(x => x.gameObject.SetActive(false));
             var category = Enum.Parse<ECategories>(dropdownFilter.options[val].text);
-            for (var i = 0; i < _manager.ownedExpansionses.Expansions.Count; i++)
+            for (var i = 0; i < _manager.ownedExpansions.Expansions.Count; i++)
             {
-                if (!_manager.ownedExpansionses.Expansions[i].Details.Tags.Contains(category)) continue;
+                if (!_manager.ownedExpansions.Expansions[i].Details.Tags.Contains(category)) continue;
                 displayingItem[i].gameObject.SetActive(true);
             }
         }

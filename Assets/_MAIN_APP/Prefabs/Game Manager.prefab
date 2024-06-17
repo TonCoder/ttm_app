@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069762401647453385}
   - component: {fileID: 4100120771281298489}
+  - component: {fileID: 4392048912405598417}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -44,8 +45,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f9bca81b7d4463c9795e3eb8d909ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownedBiomes: {fileID: 11400000, guid: 1a0bdd8f8aa7730458fb39df69d9d876, type: 2}
-  availableBiomes: {fileID: 11400000, guid: fe68bc9f97fb3c545888217a35f1b327, type: 2}
+  uiBroker: {fileID: 11400000, guid: f5528c7008e7e2644814db299abcf5c3, type: 2}
   registered: 1
-  _activeBiome: {fileID: 0}
-  _activeScene: {fileID: 0}
+  uiSfxReference:
+    m_AssetGUID: 21e72918d12cf9d4b8fbda52dd4fd442
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  availableExpansionsReference:
+    m_AssetGUID: fe68bc9f97fb3c545888217a35f1b327
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  ownedExpansionses: {fileID: 11400000, guid: 1a0bdd8f8aa7730458fb39df69d9d876, type: 2}
+  mountedExpansion: []
+  onInitiated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Creative_Vein_Studio.Tools.SceneFaderScript, Assembly-CSharp
+        m_MethodName: StartFadeIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: _MAIN_APP.Scripts.StoreSectionController, Assembly-CSharp
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <AvailableExpansions>k__BackingField: {fileID: 11400000, guid: fe68bc9f97fb3c545888217a35f1b327, type: 2}
+--- !u!114 &4392048912405598417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2170004011381875480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ec5a87f2baa624d950ddcff48f098c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

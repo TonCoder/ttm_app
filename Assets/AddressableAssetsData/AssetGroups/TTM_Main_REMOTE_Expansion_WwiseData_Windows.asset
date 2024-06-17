@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: TTM_Main_REMOTE_Expansion_WwiseData_Windows
+  m_EditorClassIdentifier: 
+  m_GroupName: TTM_Main_REMOTE_Expansion_WwiseData_Windows
+  m_Data:
+    m_SerializedData: []
+  m_GUID: c8df02d292cb53c40b4f4ee13695a1b8
+  m_SerializeEntries:
+  - m_GUID: cafe6d56ba4995e49af60277d55b2c30
+    m_Address: Assets/Wwise_Data/Banks/Windows/Main.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BANKS
+    - REMOTE
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8c45459168653b24dba7293da736a2e2, type: 2}
+    - {fileID: 11400000, guid: 6552693570004954b836b509d8b829f0, type: 2}

@@ -17,7 +17,11 @@ namespace _MAIN_APP.Scripts.ScriptableObjects
     {
         [SerializeField] private List<SoExpansionDetails> expansions = new List<SoExpansionDetails>();
 
-        public List<SoExpansionDetails> Expansions => expansions;
+        public List<SoExpansionDetails> Expansions
+        {
+            get => expansions;
+            internal set => expansions = value;
+        }
 
         private void OnValidate()
         {
@@ -28,7 +32,7 @@ namespace _MAIN_APP.Scripts.ScriptableObjects
 
 #if UNITY_EDITOR
         [Tooltip("Test purpose only; gets all biomes at given path")]
-        public string biomePath = "Assets/_MAIN_APP/content/Objects/Biomes";
+        public string biomePath = "Assets/_MAIN_APP/content/Objects/Expansion";
 
         [Button("Get Biomes")]
         public void GetBiomeScriptables()
@@ -47,7 +51,7 @@ namespace _MAIN_APP.Scripts.ScriptableObjects
 
         public void AddExpansion(SoExpansionDetails expansion)
         {
-            if (!expansions.Contains(expansion))
+            if (expansions.All(x => x.Details.ID != expansion.Details.ID))
             {
                 expansions.Add(expansion);
                 return;
@@ -60,11 +64,11 @@ namespace _MAIN_APP.Scripts.ScriptableObjects
         {
             if (expansions.Remove(expansion))
             {
-                Debug.Log("Removed");
+                Debug.Log("Expansion Removed");
                 return;
             }
 
-            Debug.Log("Biome doesnt exists in owned list");
+            Debug.Log("Expansion doesnt exists in owned list");
         }
 
         public bool GetExpansionById(int id, out SoExpansionDetails expansion)

@@ -5,51 +5,230 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="383decfd-fa57-4470-8b11-8e9d02529171" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/Models/PageSections.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/Models/PageSections.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TMM_App/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TMM_App/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroupTemplates.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroupTemplates.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Built In Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Built In Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Built In Data.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Built In Data.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Main TTM Scriptables.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Main TTM Scriptables.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Main TTM Scriptables_BundledAssetGroupSchema.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Main TTM Scriptables_BundledAssetGroupSchema.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Main TTM Scriptables_ContentUpdateGroupSchema.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Main TTM Scriptables_ContentUpdateGroupSchema.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Biome Prefabs LOCAL_BundledAssetGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Biome Prefabs LOCAL_BundledAssetGroupSchema.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/TTM Biome Prefabs LOCAL.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/TTM Biome Prefabs LOCAL.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Built In Data_PlayerDataGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Built In Data_PlayerDataGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Built In Data_PlayerDataGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Built In Data_PlayerDataGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Available Expansions REMOTE_BundledAssetGroupSchema.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Available Expansions REMOTE_BundledAssetGroupSchema.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Available Expansions REMOTE_ContentUpdateGroupSchema.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Available Expansions REMOTE_ContentUpdateGroupSchema.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Biome Prefabs LOCAL_BundledAssetGroupSchema.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Biome Prefabs LOCAL_BundledAssetGroupSchema.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Biome Prefabs LOCAL_ContentUpdateGroupSchema.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Biome Prefabs LOCAL_ContentUpdateGroupSchema.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Biome Prefabs REMOTE_BundledAssetGroupSchema.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Biome Prefabs REMOTE_BundledAssetGroupSchema.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Biome Prefabs REMOTE_ContentUpdateGroupSchema.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/TTM Biome Prefabs REMOTE_ContentUpdateGroupSchema.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Windows_Remote_Banks_BundledAssetGroupSchema.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Windows_Remote_Banks_BundledAssetGroupSchema.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Windows_Remote_Banks_ContentUpdateGroupSchema.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Windows_Remote_Banks_ContentUpdateGroupSchema.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_BundledAssetGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_BundledAssetGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_BundledAssetGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_BundledAssetGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_ContentUpdateGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_ContentUpdateGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_ContentUpdateGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_InitBank_BundledAssetGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_InitBank_BundledAssetGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_InitBank_BundledAssetGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_InitBank_BundledAssetGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_InitBank_ContentUpdateGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_InitBank_ContentUpdateGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_InitBank_ContentUpdateGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Android_InitBank_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_BundledAssetGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_BundledAssetGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_BundledAssetGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_BundledAssetGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_ContentUpdateGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_ContentUpdateGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_ContentUpdateGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_InitBank_BundledAssetGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_InitBank_BundledAssetGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_InitBank_BundledAssetGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_InitBank_BundledAssetGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_InitBank_ContentUpdateGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_InitBank_ContentUpdateGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_InitBank_ContentUpdateGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_Windows_InitBank_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_BundledAssetGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_BundledAssetGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_BundledAssetGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_BundledAssetGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_ContentUpdateGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_ContentUpdateGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_ContentUpdateGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_InitBank_BundledAssetGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_InitBank_BundledAssetGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_InitBank_BundledAssetGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_InitBank_BundledAssetGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_InitBank_ContentUpdateGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_InitBank_ContentUpdateGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_InitBank_ContentUpdateGroupSchema.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/WwiseData_iOS_InitBank_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/TTM Available Expansions REMOTE.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/TTM Available Expansions REMOTE.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/TTM Biome Prefabs LOCAL.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/TTM Biome Prefabs LOCAL.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/TTM Biome Prefabs REMOTE.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/TTM Biome Prefabs REMOTE.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Windows_Remote_Banks.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Windows_Remote_Banks.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Android.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Android.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Android.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Android.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Android_InitBank.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Android_InitBank.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Android_InitBank.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Android_InitBank.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Windows.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Windows.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Windows.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Windows.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Windows_InitBank.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Windows_InitBank.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Windows_InitBank.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_Windows_InitBank.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_iOS.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_iOS.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_iOS.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_iOS.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_iOS_InitBank.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_iOS_InitBank.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_iOS_InitBank.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/WwiseData_iOS_InitBank.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptFastMode.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptFastMode.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedPlayMode.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedPlayMode.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptVirtualMode.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptVirtualMode.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptWwisePacked.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptWwisePacked.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/DefaultObject.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DefaultObject.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/DefaultObject.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/DefaultObject.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/ProfileDataSourceSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/ProfileDataSourceSettings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/iOS.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Creative Vein Studio/Tools/GamePrefs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Creative Vein Studio/Tools/GamePrefs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Creative Vein Studio/Tools/SceneFaderScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Creative Vein Studio/Tools/SceneFaderScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Android.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Init.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Init.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Main.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Main.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/ProjectInfo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/ProjectInfo.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/ProjectInfo.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/ProjectInfo.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/UI_SFXs.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/UI_SFXs.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks/English(US).meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/English(US).meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.bnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.bnk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Main.bnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Main.bnk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Main.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Main.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PlatformInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PlatformInfo.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PluginInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PluginInfo.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/SoundbanksInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/SoundbanksInfo.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/UI_SFXs.bnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/UI_SFXs.bnk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/UI_SFXs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/UI_SFXs.txt.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Wwise_IDs.h" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Wwise_IDs.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Wwise_IDs.h.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Wwise_IDs.h.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/desc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/desc.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/English(US).meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/Init.bnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/Init.bnk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/Init.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/Init.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/Main.bnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/Main.bnk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/Main.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/Main.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/PlatformInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/PlatformInfo.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/PluginInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/PluginInfo.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/SoundbanksInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/SoundbanksInfo.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/UI_SFXs.bnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/UI_SFXs.bnk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/UI_SFXs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/iOS/UI_SFXs.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wwise.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/WwiseSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WwiseSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/S_TJ_Combat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/S_TJ_Combat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wwise_Data.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise_Data.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Addressables/Biome_General Combat.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Addressables/Biome_General Combat.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Addressables/Biome_MainAudio Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Addressables/Biome_MainAudio Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Controller.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Controller.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/AudioScene_Template.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/AudioScene_Template.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/S_TJ_Combat.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/S_TJ_Combat.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/Scene_Main_Combat.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/Scene_Main_Combat.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/Scene_Main_Fantasy.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/Scene_Main_Fantasy.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/Scene_TH_City.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/Scene_TH_City.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/Scene_TH_Combat.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/Scene_TH_Combat.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/Scene_TH_Dungeon.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Audio Tracks/Scene_TH_Dungeon.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Biome_Btn_Base.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Biome_Btn_Base.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Game Manager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Game Manager.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/UI Buttons/UI_BIOME_BTN.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/UI Buttons/UI_BIOME_BTN.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/UI Buttons/UI_SCENE_BTN Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/UI Buttons/UI_SCENE_BTN Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/UI SFX Bank.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/UI SFX Bank.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - Audio Controlls.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - Audio Controlls.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - EXPANSION PREVIEW.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - EXPANSION PREVIEW.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - Header.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - Header.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - Owned Expansions.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - Owned Expansions.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - Popup Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - Popup Menu.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - TRACKS.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Prefabs/Ui Sections/Canvas - TRACKS.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/Abstracts/TrackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/Abstracts/TrackController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/AddressableManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/AddressableManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/AddressableManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/AddressableManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/Brokers/SoBrokerUiActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/Brokers/SoBrokerUiActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/ExpansionSectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/ExpansionSectionController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/GameManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/Models/UIDisplayData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/Models/UIDisplayData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/ScriptableObjects/SoExpansionDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/ScriptableObjects/SoExpansionDetails.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/ScriptableObjects/SoExpansionsList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/ScriptableObjects/SoExpansionsList.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/StoreSectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/StoreSectionController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/TracksSectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/TracksSectionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/UIExpansionPopUpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/UIExpansionPopUpController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/UISfxController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/UISfxController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/UiAudioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/UiAudioController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/UiItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/UiItemController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Images/TTM Logo Black2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Images/TTM Logo Black2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Expansions/_Expansions_Main.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Expansions/_Expansions_Main.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Expansions/_Expansions_TomHoward.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Expansions/_Expansions_TomHoward.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Expansions_Available.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Expansions_Available.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Expansions_Owned.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Expansions_Owned.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Tracks/_AudioScene_Main_Combat.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Tracks/_AudioScene_Main_Combat.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Tracks/_AudioScene_Main_Fantasy.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Tracks/_AudioScene_Main_Fantasy.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Tracks/_AudioScene_TomHoward_City.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Tracks/_AudioScene_TomHoward_City.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Tracks/_AudioScene_TomHoward_Combat.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Tracks/_AudioScene_TomHoward_Combat.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Tracks/_AudioScene_TomHoward_Dungeon.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Objects/Tracks/_AudioScene_TomHoward_Dungeon.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Presets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Presets/ButtonPress.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/Presets/ButtonPress.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/UI/BodyContainer.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/UI/BodyContainer.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/UI/mainStyles.uss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MAIN_APP/content/UI/mainStyles.uss.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logRunSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logRunSetup.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +241,14 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27124aa0e30a41659b903b822b959bc746ac00/27/0975234d/ArraySortHelper`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27124aa0e30a41659b903b822b959bc746ac00/be/195e602b/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27124aa0e30a41659b903b822b959bc746ac00/f5/907e158f/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/70471b9615aa4ecfa3ed1abb95b7383210fc00/96/36fd7c87/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/80a8ce1980c648dca8e68f0d8aa3b930954400/22/b4b65a0b/InspectorElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/Brokers/SoBrokerUiActions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/AkAddressableBankManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/InitBankHolder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/WwiseInitBankReference.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.19/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@cbf0c5e7c9/Runtime/InitBankHolder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.21/Runtime/Addressables.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.21/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.21/Runtime/ResourceManager/AsyncOperations/AsyncOperationHandle.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -134,10 +316,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13092">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12816">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="13092" />
+      <option name="pid" value="12816" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -172,6 +354,12 @@
       <workItem from="1718036297707" duration="6338000" />
       <workItem from="1718161032629" duration="655000" />
       <workItem from="1718162108750" duration="8059000" />
+      <workItem from="1718212901939" duration="2955000" />
+      <workItem from="1718216646779" duration="34000" />
+      <workItem from="1718218489145" duration="1419000" />
+      <workItem from="1718220546665" duration="10473000" />
+      <workItem from="1718288516138" duration="16820000" />
+      <workItem from="1718575581226" duration="7172000" />
     </task>
     <servers />
   </component>
@@ -194,38 +382,18 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/AkAddressableBankManager.cs</url>
           <line>302</line>
-          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'LoadBankAsync'">
-            <startOffsets>
-              <option value="8181" />
-            </startOffsets>
-            <endOffsets>
-              <option value="8222" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'LoadBankAsync'" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/AkAddressableBankManager.cs</url>
-          <line>350</line>
-          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'LoadBankAsync'">
-            <startOffsets>
-              <option value="9966" />
-            </startOffsets>
-            <endOffsets>
-              <option value="10067" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/AddressableManager.cs</url>
-          <line>127</line>
+          <line>128</line>
           <properties documentPath="D:\Projects\TMM_App\Assets\_MAIN_APP\Scripts\AddressableManager.cs" containingFunctionPresentation="Method 'LoadAsync'">
             <startOffsets>
-              <option value="4483" />
+              <option value="4500" />
             </startOffsets>
             <endOffsets>
-              <option value="4656" />
+              <option value="4673" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="27" />
@@ -233,80 +401,104 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/AkAddressableBankManager.cs</url>
           <line>273</line>
-          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'LoadBankAsync'">
-            <startOffsets>
-              <option value="7240" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7305" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'LoadBankAsync'" />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/AkAddressableBankManager.cs</url>
           <line>282</line>
-          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'LoadBankAsync'">
-            <startOffsets>
-              <option value="7487" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7488" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'LoadBankAsync'" />
           <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/AkAddressableBankManager.cs</url>
-          <line>277</line>
-          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'LoadBankAsync'">
-            <startOffsets>
-              <option value="7371" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7411" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/InitBankHolder.cs</url>
           <line>15</line>
-          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\InitBankHolder.cs" containingFunctionPresentation="Method 'GetAddressableInitBank'">
-            <startOffsets>
-              <option value="320" />
-            </startOffsets>
-            <endOffsets>
-              <option value="489" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\InitBankHolder.cs" containingFunctionPresentation="Method 'GetAddressableInitBank'" />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/AkAddressableBankManager.cs</url>
-          <line>96</line>
-          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'FindInitBank'">
-            <startOffsets>
-              <option value="2479" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2500" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="35" />
+          <line>278</line>
+          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'LoadBankAsync'" />
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Library/PackageCache/com.audiokinetic.wwise.addressables@97a157d3b8/Runtime/AkAddressableBankManager.cs</url>
-          <line>187</line>
-          <properties documentPath="D:\Projects\TMM_App\Library\PackageCache\com.audiokinetic.wwise.addressables@97a157d3b8\Runtime\AkAddressableBankManager.cs" containingFunctionPresentation="Method 'LoadInitBank'">
+          <url>file://$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/TracksSectionController.cs</url>
+          <line>139</line>
+          <properties documentPath="D:\Projects\TMM_App\Assets\_MAIN_APP\Scripts\TracksSectionController.cs" containingFunctionPresentation="Method 'OnTrackSelected'">
             <startOffsets>
-              <option value="4654" />
+              <option value="4927" />
             </startOffsets>
             <endOffsets>
-              <option value="4723" />
+              <option value="4987" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="36" />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/TracksSectionController.cs</url>
+          <line>83</line>
+          <properties documentPath="D:\Projects\TMM_App\Assets\_MAIN_APP\Scripts\TracksSectionController.cs" containingFunctionPresentation="Method 'RemoveUnusedBanks'">
+            <startOffsets>
+              <option value="2760" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2873" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/TracksSectionController.cs</url>
+          <line>146</line>
+          <properties documentPath="D:\Projects\TMM_App\Assets\_MAIN_APP\Scripts\TracksSectionController.cs" containingFunctionPresentation="Method 'OnTrackSelected'">
+            <startOffsets>
+              <option value="5290" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5425" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/TracksSectionController.cs</url>
+          <line>87</line>
+          <properties documentPath="D:\Projects\TMM_App\Assets\_MAIN_APP\Scripts\TracksSectionController.cs" containingFunctionPresentation="Method 'RemoveUnusedBanks'">
+            <startOffsets>
+              <option value="2947" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2980" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/GameManager.cs</url>
+          <line>89</line>
+          <properties documentPath="D:\Projects\TMM_App\Assets\_MAIN_APP\Scripts\GameManager.cs" containingFunctionPresentation="Lambda expression inside Method 'LoadStoreExpansions'">
+            <startOffsets>
+              <option value="2898" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2951" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_MAIN_APP/Scripts/GameManager.cs</url>
+          <line>100</line>
+          <properties documentPath="D:\Projects\TMM_App\Assets\_MAIN_APP\Scripts\GameManager.cs" containingFunctionPresentation="Lambda expression inside Method 'GetOwnedExpansions'">
+            <startOffsets>
+              <option value="3295" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3335" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

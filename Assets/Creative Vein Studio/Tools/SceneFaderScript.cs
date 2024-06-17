@@ -55,7 +55,7 @@ namespace Creative_Vein_Studio.Tools
 
                     if (_currentColor.a > 0) return;
                     fadeOutDoneEvent?.Invoke();
-                    _fadePanel.enabled = false;
+                    // _fadePanel.enabled = false;
                     _startFadeOut = false;
                 }
 
@@ -88,7 +88,7 @@ namespace Creative_Vein_Studio.Tools
         public void StartFadeIn()
         {
             beforeRunEvent?.Invoke();
-            _fadePanel.enabled = true;
+            // _fadePanel.enabled = true;
             _currentColor.a = 0;
             _startFadeIn = true;
         }

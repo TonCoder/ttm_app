@@ -15,16 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: c573536c5f745cb42b995aa88473536c
-  m_SerializeEntries:
-  - m_GUID: fe68bc9f97fb3c545888217a35f1b327
-    m_Address: Assets/_MAIN_APP/content/Objects/Expansions_Available.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_GUID: d84792d95f93f5d4397966f7b727f869
+  m_SerializeEntries: []
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: 38d5ab88f2d629f43a16853b0f92a0ca, type: 2}
+  m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: eb5fad1c0fd9387489ed2ad6c68f4b78, type: 2}
-    - {fileID: 11400000, guid: e90c7cda2333a3040b06611e93e1fea6, type: 2}
+    - {fileID: 11400000, guid: 57666c98bc617754880850b04e5ffa76, type: 2}
+    - {fileID: 11400000, guid: b8bf3092b596bb349ac0c3ade7726ee1, type: 2}

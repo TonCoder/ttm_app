@@ -7,6 +7,7 @@ using _MAIN_APP.Scripts.Interfaces;
 using _MAIN_APP.Scripts.ScriptableObjects;
 using CreativeVeinStudio.Simple_Dialogue_System.Attributes;
 using TMPro;
+using UltEvents;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -32,7 +33,7 @@ namespace _MAIN_APP.Scripts
         [SerializeField] private List<DisplayListData> displayingItem = new List<DisplayListData>();
 
         [FieldTitle("Sections Setup")] [SerializeField]
-        private UnityEvent onTrackSelected;
+        private UltEvent<SoAudioTrackDetails> onTrackSelected;
 
         private int _activeFilterIndex;
         private GameManager _manager;
@@ -82,11 +83,15 @@ namespace _MAIN_APP.Scripts
         {
             expansionToUnload =
                 _manager.MountedExpansion.Where(x => x != _manager.ActiveExpansion).ToList();
+
+            // do not keep more than One extra banks loaded
+            if (expansionToUnload.Count <= 1) return;
             expansionToUnload?.ForEach(x =>
                 {
                     if (x != _manager.ActiveExpansion)
                     {
-                        x.ExpansionBank.Unload();
+                        AddressableManager.Instance.UnLoadAndDestroy(_manager.MountedExpansion.Last()
+                            .ExpansionBankReference);
                         _manager.MountedExpansion.Remove(x);
                     }
                 }
@@ -100,11 +105,12 @@ namespace _MAIN_APP.Scripts
 
             if (_manager.ActiveExpansion && _manager.ActiveExpansion.Details.ID == biomeSelected) return;
 
-            if (_manager.ownedExpansionses.GetExpansionById(biomeSelected, out var expansion))
+            if (_manager.ownedExpansions.GetExpansionById(biomeSelected, out var expansion))
             {
                 // add expansion and load the SoundBank
                 _manager.MountedExpansion.Add(expansion);
-                _manager.MountedExpansion.Last().ExpansionBank.Load();
+
+                AddressableManager.Instance.CreateInstance(_manager.MountedExpansion.Last().ExpansionBankReference);
 
                 // hide buttons if any for reuse
                 displayingItem.ForEach(x => x.go.SetActive(false));
@@ -120,7 +126,7 @@ namespace _MAIN_APP.Scripts
                 // set Scene Expansion header info
                 trackHeaderUI.SetDisplayData(_manager.MountedExpansion.Last().Details);
 
-                _manager.ActiveExpansion = _manager.MountedExpansion.Last();
+                // _manager.ActiveExpansion = _manager.MountedExpansion.Last();
                 // TODO - hide loading 
 
                 return;
@@ -131,6 +137,8 @@ namespace _MAIN_APP.Scripts
 
         private void OnTrackSelected(int selectedId)
         {
+            _manager.ActiveExpansion = _manager.MountedExpansion.Last();
+
             if (_manager.ActiveExpansion &&
                 _manager.ActiveExpansion.GetTrackSceneById(selectedId, out SoAudioTrackDetails track))
             {
@@ -148,7 +156,7 @@ namespace _MAIN_APP.Scripts
                 _manager.ActiveTrack.TrackID = track.details.ID;
                 _manager.ActiveTrack.Load();
                 _manager.ActiveTrack.Play();
-                onTrackSelected?.Invoke();
+                onTrackSelected?.Invoke(track);
             }
         }
 

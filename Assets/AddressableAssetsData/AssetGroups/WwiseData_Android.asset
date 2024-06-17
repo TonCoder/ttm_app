@@ -15,11 +15,26 @@ MonoBehaviour:
   m_GroupName: WwiseData_Android
   m_Data:
     m_SerializedData: []
-  m_GUID: b4b4f5ef17cd74d4da3d338daa282aba
-  m_SerializeEntries: []
+  m_GUID: 6b172259b3bf81a499def44865e71b17
+  m_SerializeEntries:
+  - m_GUID: 51ca322e89c1bcd4a81f8d34a6024235
+    m_Address: Assets/Wwise_Data/Banks/Android/Main.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3e61aea03631154992ff047eacdf97d
+    m_Address: Assets/Wwise_Data/Banks/Android/UI_SFXs.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f255c09994762e84d8d40fbaad79468b
+    m_Address: Assets/Wwise_Data/Banks/Android/DLC_War.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: 38d5ab88f2d629f43a16853b0f92a0ca, type: 2}
+  m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 8827630e523e0f8419337e5ff145ae08, type: 2}
-    - {fileID: 11400000, guid: d973e416266cd3e4eb1c08b6fd14e835, type: 2}
+    - {fileID: 11400000, guid: a47c19c2e55f1d4438aba1e700343462, type: 2}
+    - {fileID: 11400000, guid: 55b07c88b41501c498c16f5ea5ccca53, type: 2}

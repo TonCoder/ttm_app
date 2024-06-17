@@ -25,10 +25,6 @@ namespace _MAIN_APP.Scripts.Abstracts
             setup.PlayEvent ??= GetComponent<AkEvent>();
             setup.Go ??= GetComponent<AkGameObj>();
 
-            Assert.IsNotNull(setup.Bank);
-            Assert.IsNotNull(setup.PlayEvent);
-            Assert.IsNotNull(setup.Go);
-
             // Add event to the button to set self as Active biome
             // setup.Button.onClick.AddListener(SetBiome);
         }

@@ -20,7 +20,7 @@ namespace _MAIN_APP.Scripts
 
         public void SetPupUpInfo(SoExpansionDetails expansion)
         {
-            uiExpansionItem.SetDisplayData(expansion.IsFree, expansion.IsActive, expansion.Details);
+            uiExpansionItem.SetDisplayData(expansion.Details.Price <= 0, expansion.IsActive, expansion.Details);
 
             if (listItems.Count >= expansion.audioTracks.Count)
             {

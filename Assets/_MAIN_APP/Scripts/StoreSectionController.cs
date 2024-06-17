@@ -34,19 +34,43 @@ namespace _MAIN_APP.Scripts
         private void Start()
         {
             _manager = GameManager.Instance;
+            uiBroker.OnResetStore += ItemDeletedResetStore;
             dropdownFilter.options.Clear();
+            Init();
+        }
+
+        private void OnDisable()
+        {
+            uiBroker.OnResetStore -= ItemDeletedResetStore;
+        }
+
+        private void ItemDeletedResetStore()
+        {
             Init();
         }
 
         public void Init()
         {
-            if (_manager?.AvailableExpansions == null) return;
+            if (_manager?.AvailableExpansionInst == null) return;
 
             SetupDropDownList();
             // create the item to the list
-            foreach (var expansion in _manager.AvailableExpansions.Expansions)
+            for (var i = 0; i < _manager.AvailableExpansionInst.Expansions.Count; i++)
             {
-                CreateUiButton(expansion);
+                var expansion = _manager.AvailableExpansionInst.Expansions[i];
+                if (_manager.ownedExpansions.Expansions.Any(x => x.Details.ID == expansion.Details.ID))
+                {
+                    expansion.IsActive = true;
+                }
+
+                if ((displayingItem.Count - 1) >= i)
+                {
+                    displayingItem[i].SetDisplayData(expansion.Details, expansion.IsActive ? null : ShowBreakdownPopUp);
+                }
+                else
+                {
+                    CreateUiButton(expansion);
+                }
             }
         }
 
@@ -55,7 +79,7 @@ namespace _MAIN_APP.Scripts
             // setup filter list
             dropdownFilter.onValueChanged.AddListener(OnFilterChange);
 
-            foreach (var categories in _manager.AvailableExpansions.GetTags)
+            foreach (var categories in _manager.AvailableExpansionInst.GetTags)
             {
                 // setup dropdown options based on the filter
                 dropdownFilter.options.Add(new TMP_Dropdown.OptionData(categories.ToString()));
@@ -74,7 +98,7 @@ namespace _MAIN_APP.Scripts
         private void CreateUiButton(in SoExpansionDetails expansion)
         {
             var item = Instantiate(uiButtonPrefab, uiListContainer).GetComponent<UiItemController>();
-            item.SetDisplayData(expansion.IsFree,
+            item.SetDisplayData(expansion.Details.Price <= 0,
                 expansion.IsActive,
                 expansion.Details,
                 expansion.IsActive ? null : ShowBreakdownPopUp);
@@ -83,7 +107,7 @@ namespace _MAIN_APP.Scripts
 
         private void ShowBreakdownPopUp(int id)
         {
-            if (_manager.AvailableExpansions.GetExpansionById(id, out _selectedExpansion))
+            if (_manager.AvailableExpansionInst.GetExpansionById(id, out _selectedExpansion))
             {
                 Debug.Log("Store Expansion Selected");
                 expansionPopUpController.SetPupUpInfo(_selectedExpansion);
@@ -99,11 +123,11 @@ namespace _MAIN_APP.Scripts
         private void DownloadExpansion(int id)
         {
             // perform download on the object with addressable
-            if (_manager.AvailableExpansions.GetExpansionById(id, out var expansion))
+            if (_manager.AvailableExpansionInst.GetExpansionById(id, out var expansion))
             {
-                var scenesToCheck = expansion.audioTracks?.Select(x => x?.AudioReference).ToArray();
+                var scenesToDownload = expansion.audioTracks?.Select(x => x?.AudioReference).ToArray();
 
-                if (!AddressableManager.WereAssetsDownloaded(scenesToCheck))
+                if (!AddressableManager.WereAssetsDownloaded(scenesToDownload))
                 {
                     Debug.Log("Need to download expansion scenes");
                     //TODO SHOW PURCHASE VALIDATION
@@ -118,7 +142,7 @@ namespace _MAIN_APP.Scripts
                     Debug.Log("Downloading item");
                     AddressableManager.Instance.DownloadAddressableList(
                         expansion.Details.ID,
-                        scenesToCheck,
+                        scenesToDownload,
                         selectedItemUi!.DownloadProgress,
                         () =>
                         {
@@ -172,9 +196,9 @@ namespace _MAIN_APP.Scripts
             displayingItem.ForEach(x => x.gameObject.SetActive(false));
             var category = Enum.Parse<ECategories>(dropdownFilter.options[val].text);
 
-            for (var i = 0; i < _manager.AvailableExpansions.Expansions.Count; i++)
+            for (var i = 0; i < _manager.AvailableExpansionInst.Expansions.Count; i++)
             {
-                if (!_manager.AvailableExpansions.Expansions[i].Details.Tags.Contains(category)) continue;
+                if (!_manager.AvailableExpansionInst.Expansions[i].Details.Tags.Contains(category)) continue;
                 displayingItem[i].gameObject.SetActive(true);
             }
         }

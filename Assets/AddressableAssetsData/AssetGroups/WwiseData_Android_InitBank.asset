@@ -15,11 +15,16 @@ MonoBehaviour:
   m_GroupName: WwiseData_Android_InitBank
   m_Data:
     m_SerializedData: []
-  m_GUID: da56793289349784d876a6e93a87ad20
-  m_SerializeEntries: []
+  m_GUID: 404e3f353f0645249934e0d6e6e306ff
+  m_SerializeEntries:
+  - m_GUID: dc930fe28159e314bbb82dd323914923
+    m_Address: Assets/Wwise_Data/Banks/Android/Init.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: 38d5ab88f2d629f43a16853b0f92a0ca, type: 2}
+  m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: ae52074c3b2a3fe439236d3abf268ee7, type: 2}
-    - {fileID: 11400000, guid: f064323a9785d024193535e8c8d54e91, type: 2}
+    - {fileID: 11400000, guid: bbdc96c11a868854bb336591adfd033f, type: 2}
+    - {fileID: 11400000, guid: 8acb128933555474aaadd79ebba58d0e, type: 2}
