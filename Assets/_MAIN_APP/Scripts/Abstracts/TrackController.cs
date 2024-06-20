@@ -8,7 +8,7 @@ using UnityEngine.Assertions;
 
 namespace _MAIN_APP.Scripts.Abstracts
 {
-    [Serializable, RequireComponent(typeof(AkBank), typeof(AkEvent), typeof(AkGameObj))]
+    [Serializable, RequireComponent( typeof(AkEvent), typeof(AkGameObj))]
     public class TrackController : MonoBehaviour, ITrackActions
     {
         [SerializeField] internal SoundBankSetup setup;

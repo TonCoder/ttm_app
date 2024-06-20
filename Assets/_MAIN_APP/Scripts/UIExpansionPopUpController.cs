@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using _MAIN_APP.Scripts.ScriptableObjects;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -9,19 +10,22 @@ namespace _MAIN_APP.Scripts
 {
     public class UIExpansionPopUpController : MonoBehaviour
     {
-        [FormerlySerializedAs("Setup")] [SerializeField]
-        private Transform uiListContainer;
+        [FormerlySerializedAs("uiExpansionItem")] [SerializeField]
+        private UiItemController uiHeaderItem;
+
+        [SerializeField] private TextMeshProUGUI uiDesciptionTextMesh;
+
+        [SerializeField] private Transform uiListContainer;
 
         [SerializeField] private UiListItemController uiListItemPrefab;
-        [SerializeField] private UiItemController uiExpansionItem;
 
         [SerializeField, Tooltip("Has a capacity of 20")]
         private List<UiListItemController> listItems = new List<UiListItemController>(20);
 
         public void SetPupUpInfo(SoExpansionDetails expansion)
         {
-            uiExpansionItem.SetDisplayData(expansion.Details.Price <= 0, expansion.IsActive, expansion.Details);
-
+            uiHeaderItem.SetDisplayData(false, false, expansion.Details);
+            uiDesciptionTextMesh.text = expansion.Details.Description;
             if (listItems.Count >= expansion.audioTracks.Count)
             {
                 listItems.ForEach(x => x.gameObject.SetActive(false));

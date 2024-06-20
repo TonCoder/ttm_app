@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: DLC_War_REMOTE_WwiseData_IOS
+  m_EditorClassIdentifier: 
+  m_GroupName: DLC_War_REMOTE_WwiseData_IOS
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f3a050723241ccd469d67492037386e4
+  m_SerializeEntries:
+  - m_GUID: fe48abd57ac87e84181d491e3fb930b8
+    m_Address: Assets/Wwise_Data/Banks/iOS/DLC_War.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - REMOTE
+    - BANKS
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8b22d2e4038218044a67cbdb0a215498, type: 2}
+    - {fileID: 11400000, guid: e9d01c80cd0f79f4da17d54838f27d63, type: 2}

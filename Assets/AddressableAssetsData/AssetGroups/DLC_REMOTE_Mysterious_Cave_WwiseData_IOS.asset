@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: DLC_REMOTE_Mysterious_Cave_WwiseData_IOS
+  m_EditorClassIdentifier: 
+  m_GroupName: DLC_REMOTE_Mysterious_Cave_WwiseData_IOS
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b39b471b973557c46a7444e001c867f2
+  m_SerializeEntries:
+  - m_GUID: 7e05a50b9f5f4d74e90375d17914537a
+    m_Address: Assets/Wwise_Data/Banks/iOS/Mysterious_Cave.bnk
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - REMOTE
+    - BANKS
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c84fd8a072c6c47479dd50f377bcc85f, type: 2}
+    - {fileID: 11400000, guid: d8a0ce1f2e6e1e5429a3c1c4a07f9892, type: 2}

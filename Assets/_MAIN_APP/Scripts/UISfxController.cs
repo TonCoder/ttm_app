@@ -10,6 +10,7 @@ namespace _MAIN_APP.Scripts
         public SoBrokerUiActions UiBroker;
 
         [FieldTitle("Setup SFXs")] public AkGameObj thisGo;
+        public AK.Wwise.Event playLogoEvent;
         public AK.Wwise.Event clickEvent;
         public AK.Wwise.Event cancelEvent;
         public AK.Wwise.Event confirmEvent;
@@ -24,14 +25,20 @@ namespace _MAIN_APP.Scripts
 
         private void GetBrokerAndRegister()
         {
-            if (!GameManager.Instance.UiBroker) return;
+            if (!GameManager.Instance?.UiBroker) return;
             UiBroker = GameManager.Instance.UiBroker;
-            
+
             UiBroker.OnPlayClickEvent += PlayClick;
             UiBroker.OnPlayConfirmEvent += PlayConfirm;
             UiBroker.OnPlayCancelEvent += PlayCancel;
             UiBroker.OnPlayErrorEvent += PlayError;
             UiBroker.OnPlayPurchaseEvent += PlayPurchase;
+            UiBroker.OnPlayLogoEvent += PlayLogo;
+        }
+
+        public void PlayLogo()
+        {
+            playLogoEvent.Post(this.gameObject);
         }
 
         public void PlayCancel()

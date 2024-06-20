@@ -17,20 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 75a95539ba5fe324d8dba3762da54180
   m_SerializeEntries:
-  - m_GUID: cb0e91a272938874ba779db478aef33b
-    m_Address: Assets/_MAIN_APP/Prefabs/Audio Tracks/Main_GeneralCombat.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - REMOTE
-    - PREFABS
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 619364ee92daf824ba88c6e4282b58bb
-    m_Address: Assets/_MAIN_APP/Prefabs/Audio Tracks/Main_MEtalWoord.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - REMOTE
-    - PREFABS
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 50484ca30c42a0045b5cb9a712567dee
     m_Address: Assets/_MAIN_APP/Prefabs/DLC War SoundBank.prefab
     m_ReadOnly: 0
@@ -38,8 +24,22 @@ MonoBehaviour:
     - REMOTE
     - PREFABS
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2272b1ddceb5d674bb3e6e8d149ee7b2
-    m_Address: Assets/_MAIN_APP/Prefabs/Audio Tracks/Main_ForestBattle.prefab
+  - m_GUID: fa7af4cf1ba44be4ca7a2c8c64a84af9
+    m_Address: Assets/_MAIN_APP/Expansions/DLC_War/Tracks/DLC_War_CharacterIntro.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - REMOTE
+    - PREFABS
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3c69dcc65554ef448c4a9477f9cbe62
+    m_Address: Assets/_MAIN_APP/Expansions/DLC_War/Tracks/DLC_War_ForestCombat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - REMOTE
+    - PREFABS
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30c707cc2e1952a4aa7b80a9d82c1d7d
+    m_Address: Assets/_MAIN_APP/Expansions/DLC_War/Tracks/DLC_War_GenralCombat.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - REMOTE

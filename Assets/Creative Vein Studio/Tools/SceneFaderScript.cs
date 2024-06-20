@@ -79,6 +79,7 @@ namespace Creative_Vein_Studio.Tools
         [ContextMenu("Start Fade Out")]
         public void StartFadeOut()
         {
+            if (delayTimer > 0) DelayTimer.SetWaitTime(delayTimer);
             beforeRunEvent?.Invoke();
             _currentColor.a = 1;
             _startFadeOut = true;
@@ -87,6 +88,7 @@ namespace Creative_Vein_Studio.Tools
         [ContextMenu("Start Fade In")]
         public void StartFadeIn()
         {
+            if (delayTimer > 0) DelayTimer.SetWaitTime(delayTimer);
             beforeRunEvent?.Invoke();
             // _fadePanel.enabled = true;
             _currentColor.a = 0;

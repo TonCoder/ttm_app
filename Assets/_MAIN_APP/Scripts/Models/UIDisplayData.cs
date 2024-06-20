@@ -15,8 +15,10 @@ namespace _MAIN_APP.Scripts.Models
         [field: SerializeField] public Sprite ItemImage { get; internal set; }
         [field: SerializeField] public string Artist { get; internal set; }
         [field: SerializeField] public int Qty { get; internal set; }
-
         [field: SerializeField] public List<ECategories> Tags { get; internal set; } = new List<ECategories>();
+
+        [field: SerializeField, TextArea] public string Description { get; internal set; }
+
 
         public UIDisplayData()
         {

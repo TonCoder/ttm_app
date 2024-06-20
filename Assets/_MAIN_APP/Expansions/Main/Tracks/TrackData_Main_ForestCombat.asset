@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8815a5390e814e748d5b3b27dcf2f167, type: 3}
+  m_Name: TrackData_Main_ForestCombat
+  m_EditorClassIdentifier: 
+  details:
+    <ID>k__BackingField: 2147483647
+    <Price>k__BackingField: 0
+    <Title>k__BackingField: Forest Combat
+    <ItemImage>k__BackingField: {fileID: 0}
+    <Artist>k__BackingField: 
+    <Qty>k__BackingField: 0
+    <Tags>k__BackingField: 01000000
+    <Description>k__BackingField: 
+  audioReference:
+    m_AssetGUID: 2272b1ddceb5d674bb3e6e8d149ee7b2
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

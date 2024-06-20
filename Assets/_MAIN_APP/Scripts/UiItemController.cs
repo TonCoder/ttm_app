@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace _MAIN_APP.Scripts
 {
@@ -34,22 +35,25 @@ namespace _MAIN_APP.Scripts
 
         private UIDisplayData _displayData;
         private bool _isFree;
-        private bool _isActive;
         private int _itemId;
 
         public bool IsFree => _isFree;
-        public bool IsActive => _isActive;
         public int ID => _itemId;
+        public bool IsOwned { get; internal set; }
 
-        public void SetDisplayData(bool isFree, bool isActive, UIDisplayData data, Action<int> btnAction = null)
+        public void SetDisplayData(bool isFree, bool isOwned, UIDisplayData data, Action<int> btnAction = null)
         {
             _isFree = isFree;
-            _isActive = isActive;
+            IsOwned = isOwned;
+            if (isOwned && ownedTag) ownedTag.enabled = true;
+            if (ownedOverlay) ownedOverlay.enabled = isOwned;
+
             deleteBtn?.gameObject.SetActive(false);
-            if (thisBtn) thisBtn.enabled = !isActive;
-            priceTag.enabled = !isActive && !isFree;
-            priceTagText.text = $"${data.Price}";
-            SetDisplayData(data, isActive ? null : btnAction);
+            if (thisBtn) thisBtn.enabled = !isOwned;
+
+            if (priceTag) priceTag.enabled = !isOwned && !isFree;
+            if (priceTagText) priceTagText.text = $"${data.Price}";
+            SetDisplayData(data, isOwned ? null : btnAction);
         }
 
         public void SetDisplayData(UIDisplayData data, Action<int> btnAction = null)
@@ -117,7 +121,6 @@ namespace _MAIN_APP.Scripts
                 if (thisBtn) thisBtn.enabled = !owned;
                 if (ownedOverlay) ownedOverlay.enabled = true;
                 ownedTag.enabled = owned;
-                _isActive = owned;
             }
         }
 
@@ -126,12 +129,9 @@ namespace _MAIN_APP.Scripts
             if (_title) _title.text = _displayData.Title;
             if (_artist) _artist.text = _displayData.Artist;
             if (bgImage) bgImage.sprite = _displayData.ItemImage ?? bgImage.sprite;
+            if (!_displayData.ItemImage && bgImage) bgImage.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
             if (_qty) _qty.text = $"Track qty: {_displayData.Qty}";
-            if (_isFree && freeTag)
-                freeTag.enabled = true;
-            if (IsActive && ownedTag)
-                ownedTag.enabled = true;
-            if (ownedOverlay) ownedOverlay.enabled = IsActive;
+            if (_isFree && freeTag) freeTag.enabled = true;
         }
     }
 }

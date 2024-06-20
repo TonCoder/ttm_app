@@ -17,8 +17,9 @@ namespace _MAIN_APP.Scripts.ScriptableObjects
         [SerializeField] [ItemCanBeNull] internal List<SoAudioTrackDetails> audioTracks =
             new List<SoAudioTrackDetails>();
 
+        [field: SerializeField] public AssetReference ExpansionSamplerReference { get; private set; }
         [field: SerializeField] public AssetReference ExpansionBankReference { get; private set; }
-        [field: SerializeField] public bool IsActive { get; internal set; }
+
 
         public UIDisplayData Details
         {
@@ -30,8 +31,8 @@ namespace _MAIN_APP.Scripts.ScriptableObjects
             internal set => details = value;
         }
 
-        public IEnumerable<ECategories> GetTrackTags =>
-            audioTracks.SelectMany(x => x?.details.Tags).Distinct();
+        public List<ECategories> GetTrackTags =>
+            audioTracks.SelectMany(x => x?.details.Tags).Distinct().ToList();
 
         public bool GetTrackSceneById(int id, out SoAudioTrackDetails audioTrack)
         {

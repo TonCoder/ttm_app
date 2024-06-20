@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f204c478b8bbe4eb2ca817e8e96252, type: 3}
+  m_Name: _Expansions_DLC_Cave
+  m_EditorClassIdentifier: 
+  details:
+    <ID>k__BackingField: 2147483647
+    <Price>k__BackingField: 19.99
+    <Title>k__BackingField: The Cave
+    <ItemImage>k__BackingField: {fileID: 21300000, guid: d75199ac07df4c242afb0abc0a4f9b44, type: 3}
+    <Artist>k__BackingField: Coffee
+    <Qty>k__BackingField: 0
+    <Tags>k__BackingField: 0100000000000000
+    <Description>k__BackingField: Welcome to the Cave. In this expansion we showcase
+      a mysterious cavern that expressess an eerie feeling.
+  audioTracks:
+  - {fileID: 11400000, guid: 35756935ca7b85c4e8a67283e12237c7, type: 2}
+  <ExpansionSamplerReference>k__BackingField:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  <ExpansionBankReference>k__BackingField:
+    m_AssetGUID: 6c2d6647bd156b84ea88ef08c915cc27
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

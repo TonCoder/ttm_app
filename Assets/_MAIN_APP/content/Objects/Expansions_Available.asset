@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expansions:
   - {fileID: 11400000, guid: 4f42553b7efd2d2499cf2252bbbd86cc, type: 2}
-  biomePath: Assets/_MAIN_APP/content/Objects/Expansions/
+  biomePath: Assets/_MAIN_APP/Expansions

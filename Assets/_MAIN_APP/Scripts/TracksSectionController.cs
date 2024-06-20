@@ -35,9 +35,10 @@ namespace _MAIN_APP.Scripts
         [FieldTitle("Sections Setup")] [SerializeField]
         private UltEvent<SoAudioTrackDetails> onTrackSelected;
 
+        private SoExpansionDetails _currentDisplayingExpansion;
         private int _activeFilterIndex;
         private GameManager _manager;
-        private List<SoExpansionDetails> expansionToUnload = new List<SoExpansionDetails>(20);
+        private List<SoExpansionDetails> _expansionToUnload = new List<SoExpansionDetails>(20);
 
         struct DisplayListData
         {
@@ -61,86 +62,62 @@ namespace _MAIN_APP.Scripts
             displayingItem.Clear();
         }
 
-        private void SetupFilterdown(IEnumerable<ECategories> categories)
-        {
-            // setup filter list
-            dropdownFilter.onValueChanged.AddListener(OnFilterChange);
-
-            foreach (var category in categories)
-            {
-                // setup dropdown options based on the filter
-                dropdownFilter.options.Add(new TMP_Dropdown.OptionData(category.ToString()));
-            }
-
-            dropdownFilter.options.Sort((a, b) => string.Compare(a.text, b.text, StringComparison.Ordinal));
-            dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Show All"));
-
-            dropdownFilter.captionText.text = "Show All";
-            dropdownFilter.value = _activeFilterIndex;
-        }
-
         public void RemoveUnusedBanks()
         {
-            expansionToUnload =
+            _expansionToUnload =
                 _manager.MountedExpansion.Where(x => x != _manager.ActiveExpansion).ToList();
 
             // do not keep more than One extra banks loaded
-            if (expansionToUnload.Count <= 1) return;
-            expansionToUnload?.ForEach(x =>
+            if (_expansionToUnload.Count <= 1) return;
+            _expansionToUnload?.ForEach(x =>
                 {
-                    if (x != _manager.ActiveExpansion)
-                    {
-                        AddressableManager.Instance.UnLoadAndDestroy(_manager.MountedExpansion.Last()
-                            .ExpansionBankReference);
-                        _manager.MountedExpansion.Remove(x);
-                    }
+                    AddressableManager.Instance.UnLoadAndDestroy(x.ExpansionBankReference);
+                    _manager.MountedExpansion.Remove(x);
                 }
             );
         }
 
         private void OnSelectedExpansion(int biomeSelected)
         {
+#if UNITY_EDITOR
             Debug.Log($"Biome selected {biomeSelected}");
-            // TODO - show loading 
-
+#endif
             if (_manager.ActiveExpansion && _manager.ActiveExpansion.Details.ID == biomeSelected) return;
 
             if (_manager.ownedExpansions.GetExpansionById(biomeSelected, out var expansion))
             {
+                _currentDisplayingExpansion = expansion;
                 // add expansion and load the SoundBank
                 _manager.MountedExpansion.Add(expansion);
 
-                AddressableManager.Instance.CreateInstance(_manager.MountedExpansion.Last().ExpansionBankReference);
+                AddressableManager.Instance.CreateInstance(expansion.ExpansionBankReference);
 
                 // hide buttons if any for reuse
                 displayingItem.ForEach(x => x.go.SetActive(false));
 
                 // create Tag list for dropdown filter
-                SetupFilterdown(_manager.MountedExpansion.Last().GetTrackTags);
+                TtmUtilities.SetupDropdownList(ref dropdownFilter, expansion.GetTrackTags, null,
+                    OnFilterChange);
 
-                for (int i = 0; i < _manager.MountedExpansion.Last()?.audioTracks.Count; i++)
+                for (int i = 0; i < expansion?.audioTracks.Count; i++)
                 {
-                    CreateUiButton(_manager.MountedExpansion.Last(), i);
+                    CreateUiButton(expansion, i);
                 }
 
                 // set Scene Expansion header info
-                trackHeaderUI.SetDisplayData(_manager.MountedExpansion.Last().Details);
-
-                // _manager.ActiveExpansion = _manager.MountedExpansion.Last();
-                // TODO - hide loading 
-
+                trackHeaderUI.SetDisplayData(expansion.Details);
                 return;
             }
-
+#if UNITY_EDITOR
             Debug.Log("The selected biome does not exist");
+#endif
         }
 
         private void OnTrackSelected(int selectedId)
         {
-            _manager.ActiveExpansion = _manager.MountedExpansion.Last();
+            _manager.ActiveExpansion = _currentDisplayingExpansion;
 
-            if (_manager.ActiveExpansion &&
-                _manager.ActiveExpansion.GetTrackSceneById(selectedId, out SoAudioTrackDetails track))
+            if (_manager.ActiveExpansion.GetTrackSceneById(selectedId, out SoAudioTrackDetails track))
             {
                 if (_manager.ActiveTrack != null && _manager.ActiveTrack.TrackID != track.details.ID)
                 {
@@ -165,7 +142,9 @@ namespace _MAIN_APP.Scripts
             if (selectedExpansion.audioTracks == null ||
                 selectedExpansion.audioTracks?.Count <= 0)
             {
+#if UNITY_EDITOR
                 Debug.Log("The Expansion was not loaded or something went wrong.");
+#endif
                 return;
             }
 
@@ -188,7 +167,6 @@ namespace _MAIN_APP.Scripts
                 });
             }
         }
-
 
         private void OnFilterChange(int val)
         {

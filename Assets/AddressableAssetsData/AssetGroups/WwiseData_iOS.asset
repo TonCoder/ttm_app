@@ -22,16 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 53a40b222ba92784f8e9b4f98e0057ae
-    m_Address: Assets/Wwise_Data/Banks/iOS/Main.bnk
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fe48abd57ac87e84181d491e3fb930b8
-    m_Address: Assets/Wwise_Data/Banks/iOS/DLC_War.bnk
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
   m_SchemaSet:

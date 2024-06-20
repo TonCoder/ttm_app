@@ -18,7 +18,9 @@ namespace _MAIN_APP.Scripts.Brokers
         public Action OnPlayCancelEvent;
         public Action OnPlayErrorEvent;
         public Action OnPlayPurchaseEvent;
+        public Action OnPlayLogoEvent;
 
+        public void TriggerPlayLogoEvent() => OnPlayLogoEvent?.Invoke();
         public void TriggerOnPlayClickEvent() => OnPlayClickEvent?.Invoke();
         public void TriggerOnPlayConfirmEvent() => OnPlayConfirmEvent?.Invoke();
         public void TriggerOnPlayCancelEvent() => OnPlayCancelEvent?.Invoke();

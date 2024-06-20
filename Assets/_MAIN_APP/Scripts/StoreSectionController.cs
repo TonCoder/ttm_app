@@ -30,6 +30,10 @@ namespace _MAIN_APP.Scripts
         private int _activeFilterIndex;
         private GameManager _manager;
         private SoExpansionDetails _selectedExpansion;
+        private string[] _extraDropDownOptions = new[] { "Free", "Owned" };
+
+        private SoExpansionDetails _tempExpansion;
+        private bool _tempOwned;
 
         private void Start()
         {
@@ -57,19 +61,19 @@ namespace _MAIN_APP.Scripts
             // create the item to the list
             for (var i = 0; i < _manager.AvailableExpansionInst.Expansions.Count; i++)
             {
-                var expansion = _manager.AvailableExpansionInst.Expansions[i];
-                if (_manager.ownedExpansions.Expansions.Any(x => x.Details.ID == expansion.Details.ID))
-                {
-                    expansion.IsActive = true;
-                }
+                _tempExpansion = _manager.AvailableExpansionInst.Expansions[i];
+                _tempOwned = _manager.ownedExpansions.Expansions.Any(x => x.Details.ID == _tempExpansion.Details.ID);
 
                 if ((displayingItem.Count - 1) >= i)
                 {
-                    displayingItem[i].SetDisplayData(expansion.Details, expansion.IsActive ? null : ShowBreakdownPopUp);
+                    displayingItem[i].SetDisplayData(_tempExpansion.Details.Price <= 0,
+                        _tempOwned,
+                        _tempExpansion.Details,
+                        _tempOwned ? null : ShowBreakdownPopUp);
                 }
                 else
                 {
-                    CreateUiButton(expansion);
+                    CreateUiButton(ref _tempExpansion, ref _tempOwned);
                 }
             }
         }
@@ -78,30 +82,17 @@ namespace _MAIN_APP.Scripts
         {
             // setup filter list
             dropdownFilter.onValueChanged.AddListener(OnFilterChange);
-
-            foreach (var categories in _manager.AvailableExpansionInst.GetTags)
-            {
-                // setup dropdown options based on the filter
-                dropdownFilter.options.Add(new TMP_Dropdown.OptionData(categories.ToString()));
-            }
-
-            dropdownFilter.options.Sort((a, b) => string.Compare(a.text, b.text, StringComparison.Ordinal));
-
-            dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Free"));
-            dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Owned"));
-            dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Show All"));
-
-            dropdownFilter.captionText.text = "Show All";
-            dropdownFilter.value = _activeFilterIndex;
+            TtmUtilities.SetupDropdownList(ref dropdownFilter, _manager.ownedExpansions.GetTags, _extraDropDownOptions,
+                OnFilterChange);
         }
 
-        private void CreateUiButton(in SoExpansionDetails expansion)
+        private void CreateUiButton(ref SoExpansionDetails expansion, ref bool owned)
         {
             var item = Instantiate(uiButtonPrefab, uiListContainer).GetComponent<UiItemController>();
             item.SetDisplayData(expansion.Details.Price <= 0,
-                expansion.IsActive,
+                owned,
                 expansion.Details,
-                expansion.IsActive ? null : ShowBreakdownPopUp);
+                owned ? null : ShowBreakdownPopUp);
             displayingItem.Add(item);
         }
 
@@ -125,9 +116,9 @@ namespace _MAIN_APP.Scripts
             // perform download on the object with addressable
             if (_manager.AvailableExpansionInst.GetExpansionById(id, out var expansion))
             {
-                var scenesToDownload = expansion.audioTracks?.Select(x => x?.AudioReference).ToArray();
+                var tracksToDownload = expansion.audioTracks?.Select(x => x?.AudioReference).ToArray();
 
-                if (!AddressableManager.WereAssetsDownloaded(scenesToDownload))
+                if (!AddressableManager.WereAssetsDownloaded(tracksToDownload))
                 {
                     Debug.Log("Need to download expansion scenes");
                     //TODO SHOW PURCHASE VALIDATION
@@ -139,18 +130,26 @@ namespace _MAIN_APP.Scripts
 
                     // get selected ui button
                     var selectedItemUi = displayingItem.FirstOrDefault(x => x.ID == expansion.Details.ID);
+
+#if UNITY_EDITOR
                     Debug.Log("Downloading item");
-                    AddressableManager.Instance.DownloadAddressableList(
+#endif
+                    AddressableManager.Instance.DownloadList(
                         expansion.Details.ID,
-                        scenesToDownload,
+                        tracksToDownload,
                         selectedItemUi!.DownloadProgress,
                         () =>
                         {
+#if UNITY_EDITOR
                             Debug.Log("Download completed!");
+#endif
                             selectedItemUi?.UpdateOwned(true);
 
                             //done save to active list
                             uiBroker.TriggerOnDownloadExpansion(expansion);
+
+                            //release downloaded from memory
+                            AddressableManager.Instance.ReleaseAssetList(ref tracksToDownload);
                         },
                         OnErrorDownloading);
                 }
@@ -159,7 +158,9 @@ namespace _MAIN_APP.Scripts
                     // TODO do a call to api and check if expansion is actually owned before proceeding
                     // else remove it from their device
 
+#if UNITY_EDITOR
                     Debug.Log("Expansion tracks are already downloaded");
+#endif
                     displayingItem.FirstOrDefault(x => x.ID == expansion.Details.ID)?.UpdateOwned(true);
                     uiBroker.TriggerOnDownloadExpansion(expansion);
                 }
@@ -168,7 +169,9 @@ namespace _MAIN_APP.Scripts
 
         private void OnErrorDownloading(string errorMessage)
         {
+#if UNITY_EDITOR
             Debug.LogError($"There was a problem downloading the expansion: {errorMessage}");
+#endif
         }
 
         private void OnFilterChange(int val)
@@ -183,7 +186,7 @@ namespace _MAIN_APP.Scripts
 
             if (val == 1) // Owned
             {
-                displayingItem.ForEach(x => x.gameObject.SetActive(x.IsActive));
+                displayingItem.ForEach(x => x.gameObject.SetActive(x.IsOwned));
                 return;
             }
 

@@ -15,15 +15,18 @@ namespace AK
     {
         static const AkUniqueID PAUSE_ALL = 3864097025U;
         static const AkUniqueID PLAY_CANCEL_SFX = 3630037376U;
+        static const AkUniqueID PLAY_CAVE_EXPANSION = 2348874027U;
         static const AkUniqueID PLAY_CLICK_SFX = 2995851202U;
         static const AkUniqueID PLAY_CONFIRM_SFX = 1898352658U;
         static const AkUniqueID PLAY_ERROR_SFX = 1105831596U;
+        static const AkUniqueID PLAY_FOREST_COMBAT_LIGHT = 1066217853U;
         static const AkUniqueID PLAY_FOREST_COMBAT_PC = 1975640052U;
+        static const AkUniqueID PLAY_FOREST_EMOTIONAL = 3789423776U;
         static const AkUniqueID PLAY_GENERAL_COMBAT_PC = 3648814319U;
         static const AkUniqueID PLAY_METAL_WOORDS = 3444614924U;
+        static const AkUniqueID PLAY_PRE_SESSION_AMBIENCE = 2743534059U;
         static const AkUniqueID PLAY_PURCHASE_SFX = 2429227235U;
-        static const AkUniqueID PLAY_THE_GRIND = 1241241092U;
-        static const AkUniqueID PLAY_THE_START = 2623914146U;
+        static const AkUniqueID PLAY_TTM_LOGO_SFX = 165797699U;
         static const AkUniqueID RESUME_ALL = 3679762312U;
         static const AkUniqueID STOP_ALL = 452547817U;
     } // namespace EVENTS
@@ -78,6 +81,7 @@ namespace AK
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID DLC_WAR = 42811171U;
         static const AkUniqueID MAIN = 3161908922U;
+        static const AkUniqueID MYSTERIOUS_CAVE = 902302057U;
         static const AkUniqueID UI_SFXS = 406145810U;
     } // namespace BANKS
 

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f204c478b8bbe4eb2ca817e8e96252, type: 3}
+  m_Name: _Expansions_Main
+  m_EditorClassIdentifier: 
+  details:
+    <ID>k__BackingField: 2147483647
+    <Price>k__BackingField: 0
+    <Title>k__BackingField: Starting Zone
+    <ItemImage>k__BackingField: {fileID: 21300000, guid: c6eee09107fe5ef4c9c774c9f767d7e5, type: 3}
+    <Artist>k__BackingField: Austin Blau
+    <Qty>k__BackingField: 3
+    <Tags>k__BackingField: 0100000000000000
+    <Description>k__BackingField: Welcome to the Main expansion. This expansion provides
+      3 unique tracks designed to showcase how TTM works. With wonderful variations,
+      versatile combat mix, and an emotional piece for when a party member or NPC
+      has died.
+  audioTracks:
+  - {fileID: 11400000, guid: 2701be17129625f45add38c23e5c8d06, type: 2}
+  - {fileID: 11400000, guid: 36050eb0c0b75cd43a7e209aa9445ade, type: 2}
+  - {fileID: 11400000, guid: 5df1f06708221504e86b073c525d38b8, type: 2}
+  <ExpansionSamplerReference>k__BackingField:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  <ExpansionBankReference>k__BackingField:
+    m_AssetGUID: 710450eee97ece04bb59962048b91037
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

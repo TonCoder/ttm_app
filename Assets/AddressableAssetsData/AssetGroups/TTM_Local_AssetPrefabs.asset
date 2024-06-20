@@ -16,14 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 97585368632a42246a4f7293a8869128
-  m_SerializeEntries:
-  - m_GUID: 21e72918d12cf9d4b8fbda52dd4fd442
-    m_Address: Assets/_MAIN_APP/Prefabs/UI SFX Bank.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PREFABS
-    - LOCAL
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1bff146e71e620a4aae96b54520ea754, type: 2}
   m_SchemaSet:

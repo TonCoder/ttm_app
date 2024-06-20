@@ -73,21 +73,7 @@ namespace _MAIN_APP.Scripts
         private void SetupDropdownList()
         {
             dropdownFilter.options.Clear();
-
-            // setup filter list
-            dropdownFilter.onValueChanged.AddListener(OnFilterChange);
-
-            foreach (var categories in _manager.ownedExpansions.GetTags)
-            {
-                // setup dropdown options based on the filter
-                dropdownFilter.options.Add(new TMP_Dropdown.OptionData(categories.ToString()));
-            }
-
-            dropdownFilter.options.Sort((a, b) => string.Compare(a.text, b.text, StringComparison.Ordinal));
-            dropdownFilter.options.Insert(0, new TMP_Dropdown.OptionData("Show All"));
-
-            dropdownFilter.captionText.text = "Show All";
-            dropdownFilter.value = _activeFilterIndex;
+            TtmUtilities.SetupDropdownList(ref dropdownFilter, _manager.ownedExpansions.GetTags, null, OnFilterChange);
         }
 
         private void CreateUiButton(in SoExpansionDetails expansion)

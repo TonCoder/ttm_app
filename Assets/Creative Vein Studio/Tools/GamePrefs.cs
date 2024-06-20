@@ -34,6 +34,14 @@ namespace HeistEscape
         }
 
         //------------------------------------
+        // DELETE
+        //------------------------------------
+        public static void DeleteData()
+        {
+            PlayerPrefs.DeleteKey(_UserPrefs);
+        }
+
+        //------------------------------------
         // Saving changes
         //------------------------------------
         public static void SavePrefChanges()

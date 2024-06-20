@@ -24,7 +24,7 @@ namespace _MAIN_APP.Scripts
         [SerializeField] private SoBrokerUiActions uiBroker;
         [SerializeField] private bool registered;
 
-        [SerializeField] private AssetReference uiSfxReference;
+        // [SerializeField] private AssetReference uiSfxReference;
         [SerializeField] private AssetReference availableExpansionsReference;
 
         [FormerlySerializedAs("ownedExpansionses")] [SerializeField, ExposeSo]
@@ -55,7 +55,7 @@ namespace _MAIN_APP.Scripts
         private void Start()
         {
             // creates SFX instance
-            AddressableManager.Instance.CreateInstance(uiSfxReference);
+            // AddressableManager.Instance.CreateInstance(uiSfxReference);
             GetUserData();
         }
 
@@ -94,7 +94,7 @@ namespace _MAIN_APP.Scripts
 
         private void GetOwnedExpansions(SoExpansionsList available, List<string> ownedIds)
         {
-            ownedIds.ForEach(x =>
+            ownedIds?.ForEach(x =>
             {
                 if (available.GetExpansionById(int.Parse(x), out var expansion))
                 {
@@ -106,8 +106,8 @@ namespace _MAIN_APP.Scripts
         private void OnDownloadedExpansion(SoExpansionDetails soExpansionDetails)
         {
             if (!soExpansionDetails) return;
-            soExpansionDetails.IsActive = true;
             ownedExpansions.AddExpansion(soExpansionDetails);
+            SaveUserData();
         }
 
         private void DeleteExpansionFromList(int id)
@@ -117,6 +117,7 @@ namespace _MAIN_APP.Scripts
                 AddressableManager.Instance?.UnLoadAndDestroy(expansion.ExpansionBankReference);
                 ownedExpansions?.RemoveExpansion(expansion);
                 AddressableManager.Instance?.DeleteCacheAndDownload(expansion.ExpansionBankReference);
+                GamePrefs.DeleteData();
                 uiBroker.TriggerOnResetStore();
             }
         }
